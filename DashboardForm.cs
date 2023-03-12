@@ -20,7 +20,21 @@ namespace UserRegistration19
         private void booksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BookForm frm3 = new BookForm();
-            frm3.Show();
+            frm3.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
+        }
+
+        private void borrowerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BorrowerForm borrow = new BorrowerForm();
+            borrow.Show();
         }
     }
 }

@@ -5,3 +5,20 @@
     [password] VARCHAR(50) NULL
 )
 
+CREATE TABLE [dbo].[book] (
+    [accession_number] INT          NULL,
+    [title]            VARCHAR (50) NULL,
+    [author]           VARCHAR (50) NULL
+);
+
+CREATE TABLE [dbo].[users] (
+    [Id]      INT          IDENTITY (1, 1) NOT NULL,
+    [fname]   VARCHAR (50) NULL,
+    [lname]   VARCHAR (50) NULL,
+    [address] VARCHAR (50) NULL,
+    [contact] BIGINT          NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+

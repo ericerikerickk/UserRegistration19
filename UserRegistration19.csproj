@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BorrowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowerForm.Designer.cs">
+      <DependentUpon>BorrowerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cryptography.cs" />
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BorrowerForm.resx">
+      <DependentUpon>BorrowerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>

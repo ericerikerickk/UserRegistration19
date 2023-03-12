@@ -35,7 +35,8 @@ namespace UserRegistration19
                 if (Cryptography.Decrypt(Password).Equals(txtPassword.Text))
                 {
                     DashboardForm frm4 = new DashboardForm();
-                    frm4.Show();
+                    this.Hide();
+                    frm4.ShowDialog();
                 }
                 else
                 {
@@ -53,7 +54,7 @@ namespace UserRegistration19
         {
             RegistrationForm register = new RegistrationForm();
             this.Hide();
-            register.Show();
+            register.ShowDialog();
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
