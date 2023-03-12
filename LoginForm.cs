@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace UserRegistration19
 {
-    public partial class Form2 : Form
+    public partial class LoginForm : Form
     {
-        public Form2()
+        public LoginForm()
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=master;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=LibSysDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string Password = "";
@@ -34,7 +34,7 @@ namespace UserRegistration19
             {
                 if (Cryptography.Decrypt(Password).Equals(txtPassword.Text))
                 {
-                    Form4 frm4 = new Form4();
+                    DashboardForm frm4 = new DashboardForm();
                     frm4.Show();
                 }
                 else
@@ -51,9 +51,14 @@ namespace UserRegistration19
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Form1 register = new Form1();
+            RegistrationForm register = new RegistrationForm();
             this.Hide();
             register.Show();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace UserRegistration19
 {
-    public partial class Form3 : Form
+    public partial class BookForm : Form
     {
-        public Form3()
+        public BookForm()
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=master;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=LibSysDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         private void loadDataGrid()
         {
             con.Open();

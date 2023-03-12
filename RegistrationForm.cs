@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace UserRegistration19
 {
-    public partial class Form1 : Form
+    public partial class RegistrationForm : Form
     {
-        public Form1()
+        public RegistrationForm()
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=master;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=LibSysDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         private void btnRegister_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -56,7 +56,7 @@ namespace UserRegistration19
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form2 login = new Form2();
+            LoginForm login = new LoginForm();
             login.Show();
             this.Hide();
         }

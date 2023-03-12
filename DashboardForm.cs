@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace UserRegistration19
 {
-    public partial class Form4 : Form
+    public partial class DashboardForm : Form
     {
-        public Form4()
+        public DashboardForm()
         {
             InitializeComponent();
         }
 
         private void booksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 frm3 = new Form3();
+            BookForm frm3 = new BookForm();
             frm3.Show();
         }
     }
