@@ -20,7 +20,7 @@ namespace UserRegistration19
         private void booksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BookForm frm3 = new BookForm();
-            frm3.ShowDialog();
+            frm3.Show();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
