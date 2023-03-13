@@ -32,7 +32,6 @@ namespace UserRegistration19
 
         private void borrowerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             BorrowerForm borrow = new BorrowerForm();
             borrow.Show();
         }
