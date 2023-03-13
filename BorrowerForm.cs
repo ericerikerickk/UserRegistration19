@@ -22,7 +22,7 @@ namespace UserRegistration19
         {
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select * from users order by Id asc", con);
+            SqlCommand cmd = new SqlCommand("Select fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number] from users order by Id asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -87,7 +87,7 @@ namespace UserRegistration19
             txtFname.Text = dataGridView1.Rows[e.RowIndex].Cells["fname"].Value.ToString();
             txtLname.Text = dataGridView1.Rows[e.RowIndex].Cells["lname"].Value.ToString();
             txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells["address"].Value.ToString();
-            txtContact.Text = dataGridView1.Rows[e.RowIndex].Cells["address"].Value.ToString();
+            txtContact.Text = dataGridView1.Rows[e.RowIndex].Cells["contact"].Value.ToString();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
