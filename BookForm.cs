@@ -15,13 +15,16 @@ namespace UserRegistration19
         public BookForm()
         {
             InitializeComponent();
+            loadDataGrid();
+
+            
         }
+        
         SqlConnection con = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=LibSysDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         private void loadDataGrid()
         {
             con.Open();
-
-            SqlCommand cmd = new SqlCommand("Select * from book order by accession_number asc", con);
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author] from book order by accession_number asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -101,6 +104,10 @@ namespace UserRegistration19
             }
             con.Close();
             loadDataGrid();
+        }
+
+        private void BookForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

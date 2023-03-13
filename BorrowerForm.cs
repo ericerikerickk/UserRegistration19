@@ -16,6 +16,7 @@ namespace UserRegistration19
         public BorrowerForm()
         {
             InitializeComponent();
+            loadDataGrid();
         }
         SqlConnection con = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=LibSysDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         private void loadDataGrid()

@@ -31,20 +31,20 @@ namespace UserRegistration19
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtFname = new System.Windows.Forms.TextBox();
-            this.txtLname = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtContact = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtLname = new System.Windows.Forms.TextBox();
+            this.txtFname = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -77,32 +77,33 @@ namespace UserRegistration19
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fill Up Here";
             // 
-            // label2
+            // txtContact
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "First Name: ";
+            this.txtContact.Location = new System.Drawing.Point(112, 94);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(158, 20);
+            this.txtContact.TabIndex = 9;
             // 
-            // label3
+            // txtAddress
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Last Name:";
+            this.txtAddress.Location = new System.Drawing.Point(112, 71);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(158, 20);
+            this.txtAddress.TabIndex = 8;
             // 
-            // label4
+            // txtLname
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Address: ";
+            this.txtLname.Location = new System.Drawing.Point(112, 47);
+            this.txtLname.Name = "txtLname";
+            this.txtLname.Size = new System.Drawing.Size(158, 20);
+            this.txtLname.TabIndex = 7;
+            // 
+            // txtFname
+            // 
+            this.txtFname.Location = new System.Drawing.Point(112, 24);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(158, 20);
+            this.txtFname.TabIndex = 6;
             // 
             // label5
             // 
@@ -113,33 +114,32 @@ namespace UserRegistration19
             this.label5.TabIndex = 5;
             this.label5.Text = "Contact Number: ";
             // 
-            // txtFname
+            // label4
             // 
-            this.txtFname.Location = new System.Drawing.Point(112, 24);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(158, 20);
-            this.txtFname.TabIndex = 6;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(55, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Address: ";
             // 
-            // txtLname
+            // label3
             // 
-            this.txtLname.Location = new System.Drawing.Point(112, 47);
-            this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(158, 20);
-            this.txtLname.TabIndex = 7;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(45, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Last Name:";
             // 
-            // txtAddress
+            // label2
             // 
-            this.txtAddress.Location = new System.Drawing.Point(112, 71);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(158, 20);
-            this.txtAddress.TabIndex = 8;
-            // 
-            // txtContact
-            // 
-            this.txtContact.Location = new System.Drawing.Point(112, 94);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(158, 20);
-            this.txtContact.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "First Name: ";
             // 
             // btnAdd
             // 
@@ -182,6 +182,16 @@ namespace UserRegistration19
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 45);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(338, 104);
+            this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(6, 19);
@@ -189,15 +199,6 @@ namespace UserRegistration19
             this.txtSearch.Size = new System.Drawing.Size(102, 20);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(338, 104);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // BorrowerForm
             // 
