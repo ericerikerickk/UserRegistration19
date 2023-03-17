@@ -1,0 +1,1 @@
+﻿select COUNT(available) from book where available=0;
