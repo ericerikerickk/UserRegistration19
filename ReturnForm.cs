@@ -46,7 +46,7 @@ namespace UserRegistration19
         {
             int number = int.Parse(lblAccession.Text);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Update book SET available=1 where accession_number= '" + number + "'", con);
+            SqlCommand cmd = new SqlCommand("Update book SET available=1, returnDate= '" + myDateTime + "' where accession_number= '" + number + "'", con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Successfully Returned!, You returned a book on " + myDateTime + ".", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();

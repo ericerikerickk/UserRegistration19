@@ -31,6 +31,8 @@ namespace UserRegistration19
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@ namespace UserRegistration19
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,6 +80,22 @@ namespace UserRegistration19
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fill Up Here";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(114, 19);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(158, 20);
+            this.txtID.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(57, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Id No. :";
             // 
             // txtContact
             // 
@@ -189,6 +205,7 @@ namespace UserRegistration19
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 45);
             this.dataGridView1.Name = "dataGridView1";
@@ -203,22 +220,6 @@ namespace UserRegistration19
             this.txtSearch.Size = new System.Drawing.Size(102, 20);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Id No. :";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(114, 19);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(158, 20);
-            this.txtID.TabIndex = 11;
             // 
             // BorrowerForm
             // 

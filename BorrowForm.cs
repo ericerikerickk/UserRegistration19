@@ -46,7 +46,7 @@ namespace UserRegistration19
         {
             int number = int.Parse(lblAccession.Text);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Update book SET available=0, date= '" + myDateTime + "' where accession_number= '" + number + "'", con);
+            SqlCommand cmd = new SqlCommand("Update book SET available=0, borrowedDate= '" + myDateTime + "' where accession_number= '" + number + "'", con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Successfully Borrowed!, You borrowed a book on " + myDateTime +".", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();

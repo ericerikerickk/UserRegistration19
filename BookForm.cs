@@ -28,7 +28,7 @@ namespace UserRegistration19
         private void loadDataGrid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author] from book where available=1 order by accession_number asc", con);
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author], addedDate as [Added Date], returnDate as [Return Date] from book where available=1 order by accession_number asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -42,7 +42,7 @@ namespace UserRegistration19
         private void loadDataGrid2()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author] from book where available=0 order by accession_number asc", con);
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author], addedDate as [Added Date], borrowedDate as [Borrowed Date] from book where available=0 order by accession_number asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);

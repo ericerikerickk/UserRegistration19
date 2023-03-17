@@ -34,12 +34,12 @@ namespace UserRegistration19
             this.label2 = new System.Windows.Forms.Label();
             this.btnBorrow = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblAccession = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.lblAuthor = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblAccession = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +47,7 @@ namespace UserRegistration19
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 94);
             this.dataGridView1.Name = "dataGridView1";
@@ -100,23 +101,29 @@ namespace UserRegistration19
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Book Information";
             // 
-            // label3
+            // lblAuthor
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Accession Number:";
+            this.lblAuthor.AutoSize = true;
+            this.lblAuthor.Location = new System.Drawing.Point(111, 83);
+            this.lblAuthor.Name = "lblAuthor";
+            this.lblAuthor.Size = new System.Drawing.Size(0, 13);
+            this.lblAuthor.TabIndex = 5;
             // 
-            // label4
+            // lblTitle
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(75, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Title:";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(111, 56);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(0, 13);
+            this.lblTitle.TabIndex = 4;
+            // 
+            // lblAccession
+            // 
+            this.lblAccession.AutoSize = true;
+            this.lblAccession.Location = new System.Drawing.Point(111, 33);
+            this.lblAccession.Name = "lblAccession";
+            this.lblAccession.Size = new System.Drawing.Size(0, 13);
+            this.lblAccession.TabIndex = 3;
             // 
             // label5
             // 
@@ -127,29 +134,23 @@ namespace UserRegistration19
             this.label5.TabIndex = 2;
             this.label5.Text = "Author:";
             // 
-            // lblAccession
+            // label4
             // 
-            this.lblAccession.AutoSize = true;
-            this.lblAccession.Location = new System.Drawing.Point(111, 33);
-            this.lblAccession.Name = "lblAccession";
-            this.lblAccession.Size = new System.Drawing.Size(0, 13);
-            this.lblAccession.TabIndex = 3;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(75, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Title:";
             // 
-            // lblTitle
+            // label3
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(111, 56);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(0, 13);
-            this.lblTitle.TabIndex = 4;
-            // 
-            // lblAuthor
-            // 
-            this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Location = new System.Drawing.Point(111, 83);
-            this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(0, 13);
-            this.lblAuthor.TabIndex = 5;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Accession Number:";
             // 
             // BorrowForm
             // 
