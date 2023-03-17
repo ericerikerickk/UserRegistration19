@@ -45,6 +45,8 @@ namespace UserRegistration19
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +64,8 @@ namespace UserRegistration19
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtID);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtContact);
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.txtLname);
@@ -72,35 +76,35 @@ namespace UserRegistration19
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(85, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 129);
+            this.groupBox1.Size = new System.Drawing.Size(298, 139);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fill Up Here";
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(112, 94);
+            this.txtContact.Location = new System.Drawing.Point(114, 113);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(158, 20);
             this.txtContact.TabIndex = 9;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(112, 71);
+            this.txtAddress.Location = new System.Drawing.Point(114, 90);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(158, 20);
             this.txtAddress.TabIndex = 8;
             // 
             // txtLname
             // 
-            this.txtLname.Location = new System.Drawing.Point(112, 47);
+            this.txtLname.Location = new System.Drawing.Point(114, 66);
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(158, 20);
             this.txtLname.TabIndex = 7;
             // 
             // txtFname
             // 
-            this.txtFname.Location = new System.Drawing.Point(112, 24);
+            this.txtFname.Location = new System.Drawing.Point(114, 43);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(158, 20);
             this.txtFname.TabIndex = 6;
@@ -108,7 +112,7 @@ namespace UserRegistration19
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 97);
+            this.label5.Location = new System.Drawing.Point(18, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 5;
@@ -117,7 +121,7 @@ namespace UserRegistration19
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 74);
+            this.label4.Location = new System.Drawing.Point(57, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 4;
@@ -126,7 +130,7 @@ namespace UserRegistration19
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 50);
+            this.label3.Location = new System.Drawing.Point(47, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 3;
@@ -135,7 +139,7 @@ namespace UserRegistration19
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 27);
+            this.label2.Location = new System.Drawing.Point(45, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
@@ -200,6 +204,22 @@ namespace UserRegistration19
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(57, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Id No. :";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(114, 19);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(158, 20);
+            this.txtID.TabIndex = 11;
+            // 
             // BorrowerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,5 +262,7 @@ namespace UserRegistration19
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label6;
     }
 }

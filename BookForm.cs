@@ -16,15 +16,14 @@ namespace UserRegistration19
         {
             InitializeComponent();
             loadDataGrid();
-
-            
+            loadDataGrid2();
         }
         
         SqlConnection con = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=LibSysDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         private void loadDataGrid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author] from book order by accession_number asc", con);
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author] from book where available=1 order by accession_number asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -35,11 +34,25 @@ namespace UserRegistration19
 
             con.Close();
         }
+        private void loadDataGrid2()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author] from book where available=0 order by accession_number asc", con);
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter adap = new SqlDataAdapter(cmd);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
+            dataGridView2.DataSource = tab;
+
+            con.Close();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Insert into book values ('" + txtno.Text + "', '" + txttitle.Text + "', '" + txtauthor.Text + "')", con);
+            SqlCommand cmd = new SqlCommand("Insert into book (accession_number, title, author) values ('" + txtno.Text + "', '" + txttitle.Text + "', '" + txtauthor.Text + "')", con);
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -51,7 +64,7 @@ namespace UserRegistration19
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from book where title like '%" + txtSearch.Text + "%'", con);
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author] from book where title like '%" + txtSearch.Text + "%' AND available=1", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -65,9 +78,9 @@ namespace UserRegistration19
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtno.Text = dataGridView1.Rows[e.RowIndex].Cells["accession_number"].Value.ToString();
-            txttitle.Text = dataGridView1.Rows[e.RowIndex].Cells["title"].Value.ToString();
-            txtauthor.Text = dataGridView1.Rows[e.RowIndex].Cells["author"].Value.ToString();
+            txtno.Text = dataGridView1.Rows[e.RowIndex].Cells["Accession Number"].Value.ToString();
+            txttitle.Text = dataGridView1.Rows[e.RowIndex].Cells["Title"].Value.ToString();
+            txtauthor.Text = dataGridView1.Rows[e.RowIndex].Cells["Author"].Value.ToString();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -108,6 +121,21 @@ namespace UserRegistration19
 
         private void BookForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accesion Number], title AS [Title], author AS [Author] from book where title like '%" + txtSearch.Text + "%' AND available=0", con);
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter adap = new SqlDataAdapter(cmd);
+            DataTable tab = new DataTable();
+
+            adap.Fill(tab);
+            dataGridView2.DataSource = tab;
+
+            con.Close();
         }
     }
 }

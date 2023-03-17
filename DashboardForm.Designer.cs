@@ -65,14 +65,14 @@ namespace UserRegistration19
             // borrowerToolStripMenuItem
             // 
             this.borrowerToolStripMenuItem.Name = "borrowerToolStripMenuItem";
-            this.borrowerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowerToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.borrowerToolStripMenuItem.Text = "Borrower";
             this.borrowerToolStripMenuItem.Click += new System.EventHandler(this.borrowerToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem
             // 
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.booksToolStripMenuItem.Text = "Books";
             this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
             // 
@@ -88,14 +88,16 @@ namespace UserRegistration19
             // borrowToolStripMenuItem1
             // 
             this.borrowToolStripMenuItem1.Name = "borrowToolStripMenuItem1";
-            this.borrowToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.borrowToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.borrowToolStripMenuItem1.Text = "Borrow";
+            this.borrowToolStripMenuItem1.Click += new System.EventHandler(this.borrowToolStripMenuItem1_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.returnToolStripMenuItem.Text = "Return";
+            this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 

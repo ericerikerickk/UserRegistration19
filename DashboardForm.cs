@@ -35,5 +35,17 @@ namespace UserRegistration19
             BorrowerForm borrow = new BorrowerForm();
             borrow.Show();
         }
+
+        private void borrowToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BorrowForm decrease = new BorrowForm();
+            decrease.Show();
+        }
+
+        private void returnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReturnForm returnForm = new ReturnForm();
+            returnForm.Show();
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace UserRegistration19
         {
             con.Open();
             long contact = long.Parse(txtContact.Text);
-            SqlCommand cmd = new SqlCommand("Insert into users values ('" + txtFname.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "', '" + contact + "')", con);
+            SqlCommand cmd = new SqlCommand("Insert into users values ('" + txtID.Text + "', '" + txtFname.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "', '" + contact + "')", con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Close();
@@ -50,10 +50,9 @@ namespace UserRegistration19
         private void btnEdit_Click(object sender, EventArgs e)
         {
             con.Open();
-            string no;
-            no = txtContact.Text;
-
-            SqlCommand cmd = new SqlCommand("Update users SET lname= '" + txtLname.Text + "', address='" + txtAddress.Text + "', contact='" + no + "' where fname= '" + txtFname.Text + "'", con);
+            long contact = long.Parse(txtContact.Text);
+            int id = int.Parse(txtID.Text);
+            SqlCommand cmd = new SqlCommand("Update users SET fname= '" + txtFname.Text + "', lname= '" + txtLname.Text + "', address='" + txtAddress.Text + "', contact='" + contact + "' where Id= '" + id + "'", con);
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Successfully Updated!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -65,12 +64,12 @@ namespace UserRegistration19
         private void btnDelete_Click(object sender, EventArgs e)
         {
             con.Open();
-            int num = (int.Parse(txtContact.Text));
+            string name = txtFname.Text;
 
             DialogResult dr = MessageBox.Show("Are you sure you want to delete this?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                SqlCommand cmd = new SqlCommand("Delete from users where contact= '" + num + "'", con);
+                SqlCommand cmd = new SqlCommand("Delete from users where fname= '" + name + "'", con);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Successfully Deleted!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -85,10 +84,10 @@ namespace UserRegistration19
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtFname.Text = dataGridView1.Rows[e.RowIndex].Cells["fname"].Value.ToString();
-            txtLname.Text = dataGridView1.Rows[e.RowIndex].Cells["lname"].Value.ToString();
-            txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells["address"].Value.ToString();
-            txtContact.Text = dataGridView1.Rows[e.RowIndex].Cells["contact"].Value.ToString();
+            txtFname.Text = dataGridView1.Rows[e.RowIndex].Cells["First Name"].Value.ToString();
+            txtLname.Text = dataGridView1.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
+            txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+            txtContact.Text = dataGridView1.Rows[e.RowIndex].Cells["Contact Number"].Value.ToString();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
