@@ -74,6 +74,12 @@
       <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Cryptography.cs" />
+    <Compile Include="DateFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateFilterForm.Designer.cs">
+      <DependentUpon>DateFilterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowForm.resx">
       <DependentUpon>BorrowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateFilterForm.resx">
+      <DependentUpon>DateFilterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>

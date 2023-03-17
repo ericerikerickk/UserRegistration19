@@ -38,6 +38,7 @@ namespace UserRegistration19
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.dateFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,19 +89,21 @@ namespace UserRegistration19
             // borrowToolStripMenuItem1
             // 
             this.borrowToolStripMenuItem1.Name = "borrowToolStripMenuItem1";
-            this.borrowToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.borrowToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.borrowToolStripMenuItem1.Text = "Borrow";
             this.borrowToolStripMenuItem1.Click += new System.EventHandler(this.borrowToolStripMenuItem1_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dateFilterToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem.Text = "Report";
@@ -114,6 +117,13 @@ namespace UserRegistration19
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // dateFilterToolStripMenuItem
+            // 
+            this.dateFilterToolStripMenuItem.Name = "dateFilterToolStripMenuItem";
+            this.dateFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dateFilterToolStripMenuItem.Text = "Date Filter";
+            this.dateFilterToolStripMenuItem.Click += new System.EventHandler(this.dateFilterToolStripMenuItem_Click);
             // 
             // DashboardForm
             // 
@@ -144,5 +154,6 @@ namespace UserRegistration19
         private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.ToolStripMenuItem dateFilterToolStripMenuItem;
     }
 }

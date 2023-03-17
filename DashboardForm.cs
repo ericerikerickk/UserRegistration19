@@ -47,5 +47,11 @@ namespace UserRegistration19
             ReturnForm returnForm = new ReturnForm();
             returnForm.Show();
         }
+
+        private void dateFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateFilterForm dateForm = new DateFilterForm();
+            dateForm.Show();
+        }
     }
 }
