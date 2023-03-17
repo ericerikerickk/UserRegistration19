@@ -64,6 +64,7 @@ namespace UserRegistration19
             // 
             // btnSearch
             // 
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(374, 68);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(147, 23);
@@ -74,6 +75,7 @@ namespace UserRegistration19
             // 
             // btnSearch2
             // 
+            this.btnSearch2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch2.Location = new System.Drawing.Point(374, 97);
             this.btnSearch2.Name = "btnSearch2";
             this.btnSearch2.Size = new System.Drawing.Size(147, 23);
@@ -84,6 +86,7 @@ namespace UserRegistration19
             // 
             // btnSearch3
             // 
+            this.btnSearch3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch3.Location = new System.Drawing.Point(374, 126);
             this.btnSearch3.Name = "btnSearch3";
             this.btnSearch3.Size = new System.Drawing.Size(147, 23);

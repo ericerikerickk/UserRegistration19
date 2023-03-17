@@ -56,6 +56,7 @@ namespace UserRegistration19
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(165, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 30);
@@ -74,6 +75,8 @@ namespace UserRegistration19
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(85, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(298, 139);
@@ -85,7 +88,7 @@ namespace UserRegistration19
             // 
             this.txtID.Location = new System.Drawing.Point(114, 19);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(158, 20);
+            this.txtID.Size = new System.Drawing.Size(158, 22);
             this.txtID.TabIndex = 11;
             // 
             // label6
@@ -93,7 +96,7 @@ namespace UserRegistration19
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(57, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Id No. :";
             // 
@@ -101,28 +104,28 @@ namespace UserRegistration19
             // 
             this.txtContact.Location = new System.Drawing.Point(114, 113);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(158, 20);
+            this.txtContact.Size = new System.Drawing.Size(158, 22);
             this.txtContact.TabIndex = 9;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(114, 90);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(158, 20);
+            this.txtAddress.Size = new System.Drawing.Size(158, 22);
             this.txtAddress.TabIndex = 8;
             // 
             // txtLname
             // 
             this.txtLname.Location = new System.Drawing.Point(114, 66);
             this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(158, 20);
+            this.txtLname.Size = new System.Drawing.Size(158, 22);
             this.txtLname.TabIndex = 7;
             // 
             // txtFname
             // 
             this.txtFname.Location = new System.Drawing.Point(114, 43);
             this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(158, 20);
+            this.txtFname.Size = new System.Drawing.Size(158, 22);
             this.txtFname.TabIndex = 6;
             // 
             // label5
@@ -130,7 +133,7 @@ namespace UserRegistration19
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(18, 116);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Contact Number: ";
             // 
@@ -139,7 +142,7 @@ namespace UserRegistration19
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(57, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Address: ";
             // 
@@ -148,7 +151,7 @@ namespace UserRegistration19
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(47, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Last Name:";
             // 
@@ -157,12 +160,14 @@ namespace UserRegistration19
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(45, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "First Name: ";
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAdd.Location = new System.Drawing.Point(439, 86);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 35);
@@ -173,6 +178,8 @@ namespace UserRegistration19
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnEdit.Location = new System.Drawing.Point(439, 132);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 35);
@@ -183,6 +190,8 @@ namespace UserRegistration19
             // 
             // btnDelete
             // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDelete.Location = new System.Drawing.Point(439, 175);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 35);
@@ -195,6 +204,7 @@ namespace UserRegistration19
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.txtSearch);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(85, 231);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(350, 165);
@@ -217,7 +227,7 @@ namespace UserRegistration19
             // 
             this.txtSearch.Location = new System.Drawing.Point(6, 19);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(102, 20);
+            this.txtSearch.Size = new System.Drawing.Size(102, 22);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
