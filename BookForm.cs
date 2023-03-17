@@ -12,9 +12,14 @@ namespace UserRegistration19
 {
     public partial class BookForm : Form
     {
+        DateTime myDateTime = DateTime.Now;
+
         public BookForm()
         {
             InitializeComponent();
+
+            txtSearch.Text = "Search Here...";
+            txtSearch2.Text = "Search Here...";
             loadDataGrid();
             loadDataGrid2();
         }
@@ -52,13 +57,14 @@ namespace UserRegistration19
         {
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Insert into book (accession_number, title, author) values ('" + txtno.Text + "', '" + txttitle.Text + "', '" + txtauthor.Text + "')", con);
+            SqlCommand cmd = new SqlCommand("Insert into book (accession_number, title, author, addedDate) values ('" + txtno.Text + "', '" + txttitle.Text + "', '" + txtauthor.Text + "', '" + myDateTime + "')", con);
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             con.Close();
             loadDataGrid();
+            loadDataGrid2();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -96,6 +102,7 @@ namespace UserRegistration19
 
             con.Close();
             loadDataGrid();
+            loadDataGrid2();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -117,6 +124,7 @@ namespace UserRegistration19
             }
             con.Close();
             loadDataGrid();
+            loadDataGrid2();
         }
 
         private void BookForm_Load(object sender, EventArgs e)
@@ -136,6 +144,54 @@ namespace UserRegistration19
             dataGridView2.DataSource = tab;
 
             con.Close();
+            loadDataGrid();
+            loadDataGrid2();
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search Here...")
+            {
+                txtSearch.Text = "";
+            }
+            loadDataGrid();
+            loadDataGrid2();
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search Here...";
+            }
+            loadDataGrid();
+            loadDataGrid2();
+        }
+
+        private void txtSearch2_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch2.Text == "Search Here...")
+            {
+                txtSearch2.Text = "";
+            }
+            loadDataGrid();
+            loadDataGrid2();
+        }
+
+        private void txtSearch2_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch2.Text == "")
+            {
+                txtSearch2.Text = "Search Here...";
+            }
+            loadDataGrid();
+            loadDataGrid2();
+        }
+
+        private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("You cant edit! ", "info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
     }
 }

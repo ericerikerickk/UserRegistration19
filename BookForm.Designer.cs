@@ -41,12 +41,12 @@ namespace UserRegistration19
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.txtSearch2 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -169,6 +169,15 @@ namespace UserRegistration19
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Available Books";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(193, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 21);
+            this.label5.TabIndex = 2;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -186,6 +195,8 @@ namespace UserRegistration19
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // groupBox3
             // 
@@ -198,14 +209,15 @@ namespace UserRegistration19
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Borrowed Books";
             // 
-            // label5
+            // txtSearch2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(193, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 21);
-            this.label5.TabIndex = 2;
+            this.txtSearch2.Location = new System.Drawing.Point(6, 18);
+            this.txtSearch2.Name = "txtSearch2";
+            this.txtSearch2.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch2.TabIndex = 3;
+            this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
+            this.txtSearch2.Enter += new System.EventHandler(this.txtSearch2_Enter);
+            this.txtSearch2.Leave += new System.EventHandler(this.txtSearch2_Leave);
             // 
             // dataGridView2
             // 
@@ -215,14 +227,7 @@ namespace UserRegistration19
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(443, 68);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // txtSearch2
-            // 
-            this.txtSearch2.Location = new System.Drawing.Point(6, 18);
-            this.txtSearch2.Name = "txtSearch2";
-            this.txtSearch2.Size = new System.Drawing.Size(100, 20);
-            this.txtSearch2.TabIndex = 3;
-            this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
+            this.dataGridView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseClick);
             // 
             // BookForm
             // 
