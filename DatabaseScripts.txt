@@ -2,9 +2,10 @@
     [accession_number] INT          NULL,
     [title]            VARCHAR (50) NULL,
     [author]           VARCHAR (50) NULL,
-    [available]        INT          DEFAULT ((1)) NULL, 
-    [date] DATE NULL, 
-    [addedDate] DATE NULL
+    [available]        INT          DEFAULT ((1)) NULL,
+    [returnDate]       DATE         NULL,
+    [addedDate]        DATE         NULL,
+    [borrowedDate]     DATE         NULL
 );
 
 CREATE TABLE [dbo].[tblUserRegistration] (
@@ -14,6 +15,8 @@ CREATE TABLE [dbo].[tblUserRegistration] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
+
+
 CREATE TABLE [dbo].[users] (
     [Id]      INT          NOT NULL,
     [fname]   VARCHAR (50) NULL,
@@ -21,4 +24,5 @@ CREATE TABLE [dbo].[users] (
     [address] VARCHAR (50) NULL,
     [contact] BIGINT       NULL
 );
+
 

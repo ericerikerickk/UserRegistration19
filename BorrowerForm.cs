@@ -39,6 +39,7 @@ namespace UserRegistration19
         {
             con.Open();
             long contact = long.Parse(txtContact.Text);
+
             SqlCommand cmd = new SqlCommand("Insert into users values ('" + txtID.Text + "', '" + txtFname.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "', '" + contact + "')", con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);

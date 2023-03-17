@@ -53,5 +53,11 @@ namespace UserRegistration19
             DateFilterForm dateForm = new DateFilterForm();
             dateForm.Show();
         }
+
+        private void simpleReportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SimpleReportsForm simpleReportForm = new SimpleReportsForm();
+            simpleReportForm.Show();
+        }
     }
 }

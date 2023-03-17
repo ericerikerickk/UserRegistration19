@@ -39,6 +39,7 @@ namespace UserRegistration19
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
             this.dateFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +104,8 @@ namespace UserRegistration19
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateFilterToolStripMenuItem});
+            this.dateFilterToolStripMenuItem,
+            this.simpleReportsToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem.Text = "Report";
@@ -124,6 +126,13 @@ namespace UserRegistration19
             this.dateFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dateFilterToolStripMenuItem.Text = "Date Filter";
             this.dateFilterToolStripMenuItem.Click += new System.EventHandler(this.dateFilterToolStripMenuItem_Click);
+            // 
+            // simpleReportsToolStripMenuItem
+            // 
+            this.simpleReportsToolStripMenuItem.Name = "simpleReportsToolStripMenuItem";
+            this.simpleReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.simpleReportsToolStripMenuItem.Text = "Simple Reports";
+            this.simpleReportsToolStripMenuItem.Click += new System.EventHandler(this.simpleReportsToolStripMenuItem_Click);
             // 
             // DashboardForm
             // 
@@ -155,5 +164,6 @@ namespace UserRegistration19
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.ToolStripMenuItem dateFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simpleReportsToolStripMenuItem;
     }
 }
