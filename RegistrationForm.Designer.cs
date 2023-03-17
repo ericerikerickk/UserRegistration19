@@ -125,6 +125,7 @@ namespace UserRegistration19
             this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Registration";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

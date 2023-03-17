@@ -60,5 +60,14 @@ namespace UserRegistration19
             login.Show();
             this.Hide();
         }
+
+        private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you want to close this window?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
