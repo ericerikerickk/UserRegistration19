@@ -1,24 +1,24 @@
-﻿CREATE TABLE [dbo].[tblUserRegistration]
-(
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [UserName] VARCHAR(50) NULL, 
-    [password] VARCHAR(50) NULL
-)
-
-CREATE TABLE [dbo].[book] (
+﻿CREATE TABLE [dbo].[book] (
     [accession_number] INT          NULL,
     [title]            VARCHAR (50) NULL,
-    [author]           VARCHAR (50) NULL
+    [author]           VARCHAR (50) NULL,
+    [available]        INT          DEFAULT ((1)) NULL, 
+    [date] DATE NULL, 
+    [addedDate] DATE NULL
 );
 
-CREATE TABLE [dbo].[users] (
-    [Id]      INT          IDENTITY (1, 1) NOT NULL,
-    [fname]   VARCHAR (50) NULL,
-    [lname]   VARCHAR (50) NULL,
-    [address] VARCHAR (50) NULL,
-    [contact] BIGINT          NULL,
+CREATE TABLE [dbo].[tblUserRegistration] (
+    [Id]       INT          IDENTITY (1, 1) NOT NULL,
+    [UserName] VARCHAR (50) NULL,
+    [password] VARCHAR (50) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-
+CREATE TABLE [dbo].[users] (
+    [Id]      INT          NOT NULL,
+    [fname]   VARCHAR (50) NULL,
+    [lname]   VARCHAR (50) NULL,
+    [address] VARCHAR (50) NULL,
+    [contact] BIGINT       NULL
+);
 
