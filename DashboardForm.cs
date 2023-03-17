@@ -59,5 +59,16 @@ namespace UserRegistration19
             SimpleReportsForm simpleReportForm = new SimpleReportsForm();
             simpleReportForm.Show();
         }
+
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToLongTimeString();
+            label2.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }
