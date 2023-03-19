@@ -129,6 +129,16 @@ namespace UserRegistration19
 
         private void BookForm_Load(object sender, EventArgs e)
         {
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Brown;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView2.EnableHeadersVisualStyles = false;
+
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.Brown;
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
         }
 
         private void txtSearch2_TextChanged(object sender, EventArgs e)

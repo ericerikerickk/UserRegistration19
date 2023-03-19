@@ -168,6 +168,7 @@ namespace UserRegistration19
             this.Name = "BorrowForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrow";
+            this.Load += new System.EventHandler(this.BorrowForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

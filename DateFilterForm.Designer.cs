@@ -109,6 +109,7 @@ namespace UserRegistration19
             this.Controls.Add(this.dataGridView1);
             this.Name = "DateFilterForm";
             this.Text = "Date Filter";
+            this.Load += new System.EventHandler(this.DateFilterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

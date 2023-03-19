@@ -60,10 +60,15 @@ namespace UserRegistration19
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dr = MessageBox.Show("Do you want to close this window?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (dr != DialogResult.Yes)
             {
-                Application.Exit();
+                e.Cancel = true;
             }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

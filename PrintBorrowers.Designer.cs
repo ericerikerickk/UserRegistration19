@@ -184,6 +184,7 @@ namespace UserRegistration19
             this.Name = "PrintBorrowers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintBorrowers";
+            this.Load += new System.EventHandler(this.PrintBorrowers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

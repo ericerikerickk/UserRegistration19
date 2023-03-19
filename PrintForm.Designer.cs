@@ -215,6 +215,7 @@ namespace UserRegistration19
             this.Name = "PrintForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintForm";
+            this.Load += new System.EventHandler(this.PrintForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

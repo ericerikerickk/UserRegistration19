@@ -56,9 +56,10 @@ namespace UserRegistration19
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            this.Hide();
             LoginForm login = new LoginForm();
             login.Show();
-            this.Hide();
+ 
         }
 
         private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)

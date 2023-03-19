@@ -67,5 +67,13 @@ namespace UserRegistration19
             txtAddedDate.Text = dataGridView1.Rows[e.RowIndex].Cells["Added Date"].Value.ToString();
             txtBorrowedDate.Text = dataGridView1.Rows[e.RowIndex].Cells["Borrowed Date"].Value.ToString();
         }
+
+        private void PrintForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Brown;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
     }
 }

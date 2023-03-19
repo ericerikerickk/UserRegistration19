@@ -98,9 +98,9 @@ namespace UserRegistration19
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(100, 128);
+            this.btnRegister.Location = new System.Drawing.Point(75, 128);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(90, 23);
+            this.btnRegister.Size = new System.Drawing.Size(134, 23);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -109,9 +109,9 @@ namespace UserRegistration19
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(100, 157);
+            this.btnLogin.Location = new System.Drawing.Point(75, 157);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(90, 39);
+            this.btnLogin.Size = new System.Drawing.Size(134, 42);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Already have an account? Login";
             this.btnLogin.UseVisualStyleBackColor = true;

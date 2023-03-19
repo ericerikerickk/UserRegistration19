@@ -146,5 +146,13 @@ namespace UserRegistration19
 
             con.Close();
         }
+
+        private void BorrowerForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Brown;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
     }
 }
