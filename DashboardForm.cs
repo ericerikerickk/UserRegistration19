@@ -70,5 +70,11 @@ namespace UserRegistration19
         {
             label1.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintForm print = new PrintForm();
+            print.Show();
+        }
     }
 }
