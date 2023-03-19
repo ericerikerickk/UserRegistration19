@@ -121,14 +121,14 @@ namespace UserRegistration19
             // dateFilterToolStripMenuItem
             // 
             this.dateFilterToolStripMenuItem.Name = "dateFilterToolStripMenuItem";
-            this.dateFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dateFilterToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.dateFilterToolStripMenuItem.Text = "Date Filter";
             this.dateFilterToolStripMenuItem.Click += new System.EventHandler(this.dateFilterToolStripMenuItem_Click);
             // 
             // simpleReportsToolStripMenuItem
             // 
             this.simpleReportsToolStripMenuItem.Name = "simpleReportsToolStripMenuItem";
-            this.simpleReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.simpleReportsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.simpleReportsToolStripMenuItem.Text = "Simple Reports";
             this.simpleReportsToolStripMenuItem.Click += new System.EventHandler(this.simpleReportsToolStripMenuItem_Click);
             // 
@@ -138,20 +138,20 @@ namespace UserRegistration19
             this.borrowersToolStripMenuItem,
             this.booksToolStripMenuItem1});
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // borrowersToolStripMenuItem
             // 
             this.borrowersToolStripMenuItem.Name = "borrowersToolStripMenuItem";
-            this.borrowersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowersToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.borrowersToolStripMenuItem.Text = "Borrowers";
             this.borrowersToolStripMenuItem.Click += new System.EventHandler(this.borrowersToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem1
             // 
             this.booksToolStripMenuItem1.Name = "booksToolStripMenuItem1";
-            this.booksToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.booksToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.booksToolStripMenuItem1.Text = "Books";
             this.booksToolStripMenuItem1.Click += new System.EventHandler(this.booksToolStripMenuItem1_Click);
             // 
@@ -170,7 +170,7 @@ namespace UserRegistration19
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(119, 72);
+            this.label1.Location = new System.Drawing.Point(109, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 30);
             this.label1.TabIndex = 2;
@@ -180,7 +180,7 @@ namespace UserRegistration19
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(75, 106);
+            this.label2.Location = new System.Drawing.Point(61, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 30);
             this.label2.TabIndex = 3;

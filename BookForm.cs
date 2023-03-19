@@ -56,15 +56,26 @@ namespace UserRegistration19
         private void btnAdd_Click(object sender, EventArgs e)
         {
             con.Open();
+            SqlCommand checkAcc = new SqlCommand("select accession_number from book where accession_number='" + int.Parse(txtno.Text) + "'", con);
+            SqlDataAdapter sdAcc = new SqlDataAdapter(checkAcc);
+            DataTable dtAcc = new DataTable();
+            sdAcc.Fill(dtAcc);
+            if(dtAcc.Rows.Count > 0)
+            {
+                MessageBox.Show("Accession Number already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("Insert into book (accession_number, title, author, addedDate) values ('" + txtno.Text + "', '" + txttitle.Text + "', '" + txtauthor.Text + "', '" + myDateTime + "')", con);
+                cmd.ExecuteNonQuery();
 
-            SqlCommand cmd = new SqlCommand("Insert into book (accession_number, title, author, addedDate) values ('" + txtno.Text + "', '" + txttitle.Text + "', '" + txtauthor.Text + "', '" + myDateTime + "')", con);
-            cmd.ExecuteNonQuery();
+                MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            con.Close();
-            loadDataGrid();
-            loadDataGrid2();
+                con.Close();
+                loadDataGrid();
+                loadDataGrid2();
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
