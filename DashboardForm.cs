@@ -71,10 +71,23 @@ namespace UserRegistration19
             label1.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        private void booksToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            PrintForm print = new PrintForm();
-            print.Show();
+            PrintForm printbooks = new PrintForm();
+            printbooks.Show();
+        }
+
+        private void borrowersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintBorrowers printBorrow = new PrintBorrowers();
+            printBorrow.Show();
+        }
+
+        private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
         }
     }
 }

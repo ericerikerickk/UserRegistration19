@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace UserRegistration19
 {
-    public partial class PrintForm : Form
+    public partial class PrintBorrowers : Form
     {
-        public PrintForm()
+        public PrintBorrowers()
         {
             InitializeComponent();
             loadDataGrid();
@@ -21,7 +21,8 @@ namespace UserRegistration19
         private void loadDataGrid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author], convert(VARCHAR(10),addedDate,101) as [Added Date], convert(VARCHAR(10),returnDate,101) as [Return Date], convert(VARCHAR(10),borrowedDate,101) as [Borrowed Date] from book order by accession_number asc", con);
+
+            SqlCommand cmd = new SqlCommand("Select Id AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number] from users order by Id asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -33,6 +34,14 @@ namespace UserRegistration19
             con.Close();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtID.Text = dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+            txtFname.Text = dataGridView1.Rows[e.RowIndex].Cells["First Name"].Value.ToString();
+            txtLname.Text = dataGridView1.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
+            txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+            txtContact.Text = dataGridView1.Rows[e.RowIndex].Cells["Contact Number"].Value.ToString();
+        }
         Bitmap bitmap;
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -49,23 +58,13 @@ namespace UserRegistration19
 
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
-            
+
         }
+
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(bitmap, 0, 0);
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            this.dataGridView1.Columns["Return Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
-            txtAcc.Text = dataGridView1.Rows[e.RowIndex].Cells["Accession Number"].Value.ToString();
-            txtTitle.Text = dataGridView1.Rows[e.RowIndex].Cells["Title"].Value.ToString();
-            txtAuthor.Text = dataGridView1.Rows[e.RowIndex].Cells["Author"].Value.ToString();
-            txtReturnDate.Text = dataGridView1.Rows[e.RowIndex].Cells["Return Date"].Value.ToString();
-            txtAddedDate.Text = dataGridView1.Rows[e.RowIndex].Cells["Added Date"].Value.ToString();
-            txtBorrowedDate.Text = dataGridView1.Rows[e.RowIndex].Cells["Borrowed Date"].Value.ToString();
         }
     }
 }

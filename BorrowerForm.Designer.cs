@@ -235,6 +235,7 @@ namespace UserRegistration19
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(568, 422);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDelete);

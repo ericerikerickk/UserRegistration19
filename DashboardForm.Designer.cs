@@ -40,11 +40,13 @@ namespace UserRegistration19
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpleReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrowersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.booksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +132,29 @@ namespace UserRegistration19
             this.simpleReportsToolStripMenuItem.Text = "Simple Reports";
             this.simpleReportsToolStripMenuItem.Click += new System.EventHandler(this.simpleReportsToolStripMenuItem_Click);
             // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.borrowersToolStripMenuItem,
+            this.booksToolStripMenuItem1});
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Text = "Print";
+            // 
+            // borrowersToolStripMenuItem
+            // 
+            this.borrowersToolStripMenuItem.Name = "borrowersToolStripMenuItem";
+            this.borrowersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowersToolStripMenuItem.Text = "Borrowers";
+            this.borrowersToolStripMenuItem.Click += new System.EventHandler(this.borrowersToolStripMenuItem_Click);
+            // 
+            // booksToolStripMenuItem1
+            // 
+            this.booksToolStripMenuItem1.Name = "booksToolStripMenuItem1";
+            this.booksToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.booksToolStripMenuItem1.Text = "Books";
+            this.booksToolStripMenuItem1.Click += new System.EventHandler(this.booksToolStripMenuItem1_Click);
+            // 
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(258, 168);
@@ -143,7 +168,8 @@ namespace UserRegistration19
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(119, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 30);
@@ -152,7 +178,8 @@ namespace UserRegistration19
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(75, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 30);
@@ -163,17 +190,11 @@ namespace UserRegistration19
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.printToolStripMenuItem.Text = "Print";
-            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(357, 214);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -183,6 +204,7 @@ namespace UserRegistration19
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DashboardForm_FormClosing);
             this.Load += new System.EventHandler(this.DashboardForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -208,5 +230,7 @@ namespace UserRegistration19
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem borrowersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem1;
     }
 }
