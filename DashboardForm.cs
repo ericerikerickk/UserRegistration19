@@ -27,7 +27,7 @@ namespace UserRegistration19
         {
             this.Hide();
             LoginForm login = new LoginForm();
-            login.Show();
+            login.ShowDialog();
         }
 
         private void borrowerToolStripMenuItem_Click(object sender, EventArgs e)
