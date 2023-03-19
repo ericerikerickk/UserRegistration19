@@ -21,7 +21,7 @@ namespace UserRegistration19
         private void loadDataGrid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author], convert(date,addedDate,105) as [Added Date], returnDate as [Return Date], borrowedDate as [Borrowed Date] from book order by accession_number asc", con);
+            SqlCommand cmd = new SqlCommand("Select accession_number AS [Accession Number], title AS [Title], author AS [Author], convert(VARCHAR(10),addedDate,101) as [Added Date], convert(VARCHAR(10),returnDate,101) as [Return Date], convert(VARCHAR(10),borrowedDate,101) as [Borrowed Date] from book order by accession_number asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -57,7 +57,7 @@ namespace UserRegistration19
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dataGridView1.Columns["Return Date"].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm:ss tt";
+            this.dataGridView1.Columns["Return Date"].DefaultCellStyle.Format = "MM/dd/yyyy";
             txtAcc.Text = dataGridView1.Rows[e.RowIndex].Cells["Accession Number"].Value.ToString();
             txtTitle.Text = dataGridView1.Rows[e.RowIndex].Cells["Title"].Value.ToString();
             txtAuthor.Text = dataGridView1.Rows[e.RowIndex].Cells["Author"].Value.ToString();
