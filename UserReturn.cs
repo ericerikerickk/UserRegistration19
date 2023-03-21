@@ -24,7 +24,7 @@ namespace UserRegistration19
         private void loadDataGrid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select book.accession_number AS [Accession Number], book.title AS [Title], book.author AS [Author], convert(VARCHAR(10),borrowTable.borrowDate,101) AS [Borrowed Date] from book INNER JOIN borrowTable ON book.accession_number = borrowTable.bookID where borrowTable.username = '" + username + "' AND book.available = 0", con);
+            SqlCommand cmd = new SqlCommand("Select DISTINCT book.accession_number AS [Accession Number], book.title AS [Title], book.author AS [Author] from book INNER JOIN borrowTable ON book.accession_number = borrowTable.bookID where borrowTable.username = '" + username + "' AND book.available = 0", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -41,8 +41,19 @@ namespace UserRegistration19
             lblAccession.Text = dataGridView1.Rows[e.RowIndex].Cells["Accession Number"].Value.ToString();
             lblTitle.Text = dataGridView1.Rows[e.RowIndex].Cells["Title"].Value.ToString();
             lblAuthor.Text = dataGridView1.Rows[e.RowIndex].Cells["Author"].Value.ToString();
-            lblBorrowedDate.Text = dataGridView1.Rows[e.RowIndex].Cells["Borrowed Date"].Value.ToString();
 
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into returnTable (username, bookID, returnDate) values ('" + username + "', '" + lblAccession.Text + "', '" + myDateTime + "')", con);
+            cmd.ExecuteNonQuery();
+            SqlCommand cmd1 = new SqlCommand("Update book SET available=1 where accession_number= '" + lblAccession.Text + "'", con);
+            cmd1.ExecuteNonQuery();
+            MessageBox.Show("Successfully returned", "Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            con.Close();
+            loadDataGrid();
         }
     }
 }

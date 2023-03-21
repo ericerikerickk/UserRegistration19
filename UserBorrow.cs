@@ -51,6 +51,7 @@ namespace UserRegistration19
             SqlCommand cmd1 = new SqlCommand("Update book SET available=0 where accession_number= '" + lblAccession.Text + "'", con);
             cmd1.ExecuteNonQuery();
             MessageBox.Show("Successfully Borrowed", "Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            con.Close();
             loadDataGrid();
         }
 
