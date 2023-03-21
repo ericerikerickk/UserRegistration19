@@ -41,6 +41,7 @@ namespace UserRegistration19
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.borrowersBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,21 +77,22 @@ namespace UserRegistration19
             // borrowToolStripMenuItem
             // 
             this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
-            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.borrowToolStripMenuItem.Text = "Borrow";
             this.borrowToolStripMenuItem.Click += new System.EventHandler(this.borrowToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // borrowerInfoToolStripMenuItem
             // 
             this.borrowerInfoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.borrowerInformationToolStripMenuItem});
+            this.borrowerInformationToolStripMenuItem,
+            this.borrowersBooksToolStripMenuItem});
             this.borrowerInfoToolStripMenuItem.Name = "borrowerInfoToolStripMenuItem";
             this.borrowerInfoToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.borrowerInfoToolStripMenuItem.Text = "File";
@@ -137,6 +139,13 @@ namespace UserRegistration19
             this.label4.TabIndex = 4;
             this.label4.Text = "label3";
             // 
+            // borrowersBooksToolStripMenuItem
+            // 
+            this.borrowersBooksToolStripMenuItem.Name = "borrowersBooksToolStripMenuItem";
+            this.borrowersBooksToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.borrowersBooksToolStripMenuItem.Text = "Borrower\'s Book/s";
+            this.borrowersBooksToolStripMenuItem.Click += new System.EventHandler(this.borrowersBooksToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,5 +183,6 @@ namespace UserRegistration19
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem borrowersBooksToolStripMenuItem;
     }
 }

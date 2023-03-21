@@ -136,6 +136,12 @@
     <Compile Include="SimpleReportsForm.Designer.cs">
       <DependentUpon>SimpleReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserBooks.Designer.cs">
+      <DependentUpon>UserBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserBorrow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleReportsForm.resx">
       <DependentUpon>SimpleReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserBooks.resx">
+      <DependentUpon>UserBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserBorrow.resx">
       <DependentUpon>UserBorrow.cs</DependentUpon>

@@ -65,5 +65,11 @@ namespace UserRegistration19
             UserInfoForm userInfo = new UserInfoForm(username);
             userInfo.Show();
         }
+
+        private void borrowersBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserBooks userBookForm = new UserBooks(username);
+            userBookForm.Show();
+        }
     }
 }
