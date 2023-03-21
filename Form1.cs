@@ -59,5 +59,11 @@ namespace UserRegistration19
             label3.Text = DateTime.Now.ToLongTimeString();
 
         }
+
+        private void borrowerInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserInfoForm userInfo = new UserInfoForm(username);
+            userInfo.Show();
+        }
     }
 }

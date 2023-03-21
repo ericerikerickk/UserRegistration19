@@ -76,14 +76,14 @@ namespace UserRegistration19
             // borrowToolStripMenuItem
             // 
             this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
-            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrowToolStripMenuItem.Text = "Borrow";
             this.borrowToolStripMenuItem.Click += new System.EventHandler(this.borrowToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
@@ -100,6 +100,7 @@ namespace UserRegistration19
             this.borrowerInformationToolStripMenuItem.Name = "borrowerInformationToolStripMenuItem";
             this.borrowerInformationToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.borrowerInformationToolStripMenuItem.Text = "Borrower Information";
+            this.borrowerInformationToolStripMenuItem.Click += new System.EventHandler(this.borrowerInformationToolStripMenuItem_Click);
             // 
             // btnLogout
             // 
