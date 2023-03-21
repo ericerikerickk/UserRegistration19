@@ -40,12 +40,16 @@ namespace UserRegistration19
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbl = new System.Windows.Forms.Label();
+            this.lblBorrowedDate = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblBorrowedDate);
+            this.groupBox1.Controls.Add(this.lbl);
             this.groupBox1.Controls.Add(this.lblAuthor);
             this.groupBox1.Controls.Add(this.lblTitle);
             this.groupBox1.Controls.Add(this.lblAccession);
@@ -150,6 +154,24 @@ namespace UserRegistration19
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(282, 139);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(24, 106);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(87, 13);
+            this.lbl.TabIndex = 6;
+            this.lbl.Text = "Borrowed Date:";
+            // 
+            // lblBorrowedDate
+            // 
+            this.lblBorrowedDate.AutoSize = true;
+            this.lblBorrowedDate.Location = new System.Drawing.Point(111, 106);
+            this.lblBorrowedDate.Name = "lblBorrowedDate";
+            this.lblBorrowedDate.Size = new System.Drawing.Size(0, 13);
+            this.lblBorrowedDate.TabIndex = 7;
             // 
             // UserReturn
             // 
@@ -185,5 +207,7 @@ namespace UserRegistration19
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Label lblBorrowedDate;
     }
 }
