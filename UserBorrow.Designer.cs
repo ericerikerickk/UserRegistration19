@@ -65,7 +65,7 @@ namespace UserRegistration19
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(300, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(186, 182);
+            this.groupBox1.Size = new System.Drawing.Size(439, 182);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Book Information";
@@ -124,7 +124,7 @@ namespace UserRegistration19
             // btnBorrow
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrow.Location = new System.Drawing.Point(401, 251);
+            this.btnBorrow.Location = new System.Drawing.Point(664, 253);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(75, 23);
             this.btnBorrow.TabIndex = 11;
@@ -169,7 +169,7 @@ namespace UserRegistration19
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(504, 288);
+            this.ClientSize = new System.Drawing.Size(751, 288);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.label2);
