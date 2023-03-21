@@ -8,6 +8,23 @@
     [borrowedDate]     DATE         NULL
 );
 
+CREATE TABLE [dbo].[borrowTable] (
+    [Id]         INT          IDENTITY (1, 1) NOT NULL,
+    [username]   VARCHAR (50) NULL,
+    [bookID]     INT          NULL,
+    [borrowDate] DATE         NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[returnTable]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [username] VARCHAR(50) NULL, 
+    [bookID] INT NULL, 
+    [returnDate] DATE NULL
+)
+
+
 CREATE TABLE [dbo].[tblUserRegistration] (
     [Id]       INT          IDENTITY (1, 1) NOT NULL,
     [UserName] VARCHAR (50) NULL,
@@ -15,15 +32,18 @@ CREATE TABLE [dbo].[tblUserRegistration] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-
-
 CREATE TABLE [dbo].[users] (
-    [Id]      INT          NOT NULL,
-    [fname]   VARCHAR (50) NULL,
-    [lname]   VARCHAR (50) NULL,
-    [address] VARCHAR (50) NULL,
-    [contact] BIGINT       NULL
+    [Idnum]    INT          NULL,
+    [fname]    VARCHAR (50) NULL,
+    [lname]    VARCHAR (50) NULL,
+    [address]  VARCHAR (50) NULL,
+    [contact]  BIGINT       NULL,
+    [UserName] VARCHAR (50) NULL,
+    [password] VARCHAR (50) NULL,
+    [Id]       INT          IDENTITY (1, 1) NOT NULL,
+    CONSTRAINT [PK_users] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
 
 POPULATION
 insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (2, '1984', 'George Orwell', '03/02/2023', '03/03/2023', '03/04/2023');
