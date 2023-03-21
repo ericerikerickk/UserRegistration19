@@ -48,6 +48,7 @@ namespace UserRegistration19
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtSearch2 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,10 +59,10 @@ namespace UserRegistration19
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(207, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 39);
+            this.label1.Size = new System.Drawing.Size(230, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Library System";
             // 
@@ -73,6 +74,7 @@ namespace UserRegistration19
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(156, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(252, 113);
@@ -84,21 +86,21 @@ namespace UserRegistration19
             // 
             this.txtauthor.Location = new System.Drawing.Point(131, 81);
             this.txtauthor.Name = "txtauthor";
-            this.txtauthor.Size = new System.Drawing.Size(100, 20);
+            this.txtauthor.Size = new System.Drawing.Size(100, 22);
             this.txtauthor.TabIndex = 5;
             // 
             // txttitle
             // 
             this.txttitle.Location = new System.Drawing.Point(131, 52);
             this.txttitle.Name = "txttitle";
-            this.txttitle.Size = new System.Drawing.Size(100, 20);
+            this.txttitle.Size = new System.Drawing.Size(100, 22);
             this.txttitle.TabIndex = 4;
             // 
             // txtno
             // 
             this.txtno.Location = new System.Drawing.Point(131, 25);
             this.txtno.Name = "txtno";
-            this.txtno.Size = new System.Drawing.Size(100, 20);
+            this.txtno.Size = new System.Drawing.Size(100, 22);
             this.txtno.TabIndex = 3;
             // 
             // label4
@@ -106,7 +108,7 @@ namespace UserRegistration19
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(29, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Author";
             // 
@@ -115,7 +117,7 @@ namespace UserRegistration19
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(29, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Title";
             // 
@@ -124,7 +126,7 @@ namespace UserRegistration19
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(29, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Accession Number";
             // 
@@ -160,9 +162,11 @@ namespace UserRegistration19
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.txtSearch);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(30, 188);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(464, 143);
@@ -185,7 +189,7 @@ namespace UserRegistration19
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -201,9 +205,9 @@ namespace UserRegistration19
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(6, 19);
+            this.txtSearch.Location = new System.Drawing.Point(93, 19);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.Size = new System.Drawing.Size(100, 22);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
@@ -240,6 +244,16 @@ namespace UserRegistration19
             this.dataGridView2.Size = new System.Drawing.Size(443, 68);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Search By Title:";
             // 
             // BookForm
             // 
@@ -291,5 +305,6 @@ namespace UserRegistration19
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox txtSearch2;
+        private System.Windows.Forms.Label label6;
     }
 }
