@@ -21,6 +21,8 @@ namespace UserRegistration19
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            label3.Text = DateTime.Now.ToLongTimeString();
+            label4.Text = DateTime.Now.ToLongDateString();
             string usernameFormatted = username.Substring(0, 1).ToUpper() + username.Substring(1);
             label1.Text = $"Welcome, {usernameFormatted}!";
         }
@@ -31,10 +33,12 @@ namespace UserRegistration19
             userBorrow.Show();
         }
 
-        private void borrowerInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void returnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            UserReturn returnForm = new UserReturn(username);
+            returnForm.Show();
         }
+
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -48,6 +52,12 @@ namespace UserRegistration19
             this.Hide();
             LoginForm login = new LoginForm();
             login.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label3.Text = DateTime.Now.ToLongTimeString();
+
         }
     }
 }

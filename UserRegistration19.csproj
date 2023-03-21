@@ -142,6 +142,12 @@
     <Compile Include="UserBorrow.Designer.cs">
       <DependentUpon>UserBorrow.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserReturn.Designer.cs">
+      <DependentUpon>UserReturn.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BorrowerForm.resx">
       <DependentUpon>BorrowerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserBorrow.resx">
       <DependentUpon>UserBorrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserReturn.resx">
+      <DependentUpon>UserReturn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
