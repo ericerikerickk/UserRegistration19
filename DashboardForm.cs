@@ -12,9 +12,12 @@ namespace UserRegistration19
 {
     public partial class DashboardForm : Form
     {
-        public DashboardForm()
+        private string username;
+
+        public DashboardForm(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
         private void booksToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,6 +67,8 @@ namespace UserRegistration19
         {
             label1.Text = DateTime.Now.ToLongTimeString();
             label2.Text = DateTime.Now.ToLongDateString();
+            string usernameFormatted = username.Substring(0, 1).ToUpper() + username.Substring(1);
+            label3.Text = $"Welcome, {usernameFormatted}!";
         }
 
         private void timer1_Tick(object sender, EventArgs e)

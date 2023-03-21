@@ -24,7 +24,7 @@ namespace UserRegistration19
             {
                 if (txtPassword.Text.ToString().Trim().ToLower() == txtConfirmPassword.Text.ToString().Trim().ToLower()) //validating Password textbox and confirm password textbox is match or unmatch    
                 {
-                    SqlCommand cmd = new SqlCommand("select * from tblUserRegistration where UserName='" + txtUserName.Text + "'", con);
+                    SqlCommand cmd = new SqlCommand("select * from users where UserName='" + txtUserName.Text + "'", con);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
@@ -37,7 +37,7 @@ namespace UserRegistration19
                         string Password = Cryptography.Encrypt(txtPassword.Text.ToString());   // Passing the Password to Encrypt method and the method will return encrypted string and stored in Password variable.  
                         con.Close();
                         con.Open();
-                        SqlCommand insert = new SqlCommand("insert into tblUserRegistration(UserName,Password)values('" + UserName + "','" + Password + "')", con);
+                        SqlCommand insert = new SqlCommand("insert into users(UserName,Password)values('" + UserName + "','" + Password + "')", con);
                         insert.ExecuteNonQuery();
                         con.Close();
                         MessageBox.Show("Record inserted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

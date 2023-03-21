@@ -30,13 +30,22 @@ namespace UserRegistration19
                 IsExist = true;
             }
             con.Close();
-            if (IsExist)  //if record exis in db , it will return true, otherwise it will return false  
+            if (IsExist)  //if record exist in db , it will return true, otherwise it will return false  
             {
                 if (Cryptography.Decrypt(Password).Equals(txtPassword.Text))
                 {
-                    DashboardForm frm4 = new DashboardForm();
-                    this.Hide();
-                    frm4.ShowDialog();
+                    if(txtUserName.Text == "admin")
+                    {
+                        DashboardForm frm4 = new DashboardForm(txtUserName.Text);
+                        this.Hide();
+                        frm4.ShowDialog();
+                    }
+                    else
+                    {
+                        Form1 form1 = new Form1(txtUserName.Text);
+                        this.Hide();
+                        form1.ShowDialog();
+                    }
                 }
                 else
                 {

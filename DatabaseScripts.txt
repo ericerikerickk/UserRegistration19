@@ -25,4 +25,33 @@ CREATE TABLE [dbo].[users] (
     [contact] BIGINT       NULL
 );
 
+POPULATION
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (2, '1984', 'George Orwell', '03/02/2023', '03/03/2023', '03/04/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (3, 'The Great Gatsby', 'F. Scott Fitzgerald', '03/03/2023', '03/04/2023', '03/05/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (4, 'Pride and Prejudice', 'Jane Austen', '03/04/2023', '03/05/2023', '03/06/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (5, 'The Catcher in the Rye', 'J.D. Salinger', '03/05/2023', '03/06/2023', '03/07/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (6, 'The Lord of the Rings', 'J.R.R. Tolkien', '03/06/2023', '03/07/2023', '03/08/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (7, 'The Hunger Games', 'Suzanne Collins', '03/07/2023', '03/08/2023', '03/09/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (8, 'The Chronicles of Narnia', 'C.S. Lewis', '03/08/2023', '03/09/2023', '03/10/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (9, 'Harry Potter', 'J.K. Rowling', '03/09/2023', '03/10/2023', '03/11/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (10, 'The Da Vinci Code', 'Dan Brown', '03/10/2023', '03/11/2023', '03/12/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (11, 'One Hundred Years of Solitude', 'Gabriel Garcia Marquez', '03/12/2023', '03/13/2023', '03/14/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (12, 'Brave New World', 'Aldous Huxley', '03/13/2023', '03/14/2023', '03/15/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (13, 'The Diary of a Young Girl', 'Anne Frank', '03/14/2023', '03/15/2023', '03/16/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (14, 'The Picture of Dorian Gray', 'Oscar Wilde', '03/15/2023', '03/16/2023', '03/17/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (15, 'The Kite Runner', 'Khaled Hosseini', '03/16/2023', '03/17/2023', '03/18/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (16, 'The Alchemist', 'Paulo Coelho', '03/17/2023', '03/18/2023', '03/19/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (17, 'The Girl with the Dragon Tattoo', 'Stieg Larsson', '03/18/2023', '03/19/2023', '03/20/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (18, 'The Adventures of Sherlock Holmes', 'Arthur Conan Doyle', '03/19/2023', '03/20/2023', '03/21/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (19, 'The Bell Jar', 'Sylvia Plath', '03/20/2023', '03/21/2023', '03/22/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (20, 'Crime and Punishment', 'Fyodor Dostoevsky', '03/22/2023', '03/23/2023', '03/24/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (21, 'Beloved', 'Toni Morrison', '03/23/2023', '03/24/2023', '03/25/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (22, 'Slaughterhouse-Five', 'Kurt Vonnegut', '03/24/2023', '03/25/2023', '03/26/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (23, 'The Sun Also Rises', 'Ernest Hemingway', '03/25/2023', '03/26/2023', '03/27/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (24, 'Frankenstein', 'Mary Shelley', '03/26/2023', '03/27/2023', '03/28/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (25, 'The Brothers Karamazov', 'Fyodor Dostoevsky', '03/28/2023', '03/29/2023', '03/30/2023');
+insert into book (accession_number, title, author, addedDate, borrowedDate, returnDate) values (26, 'The Name of the Rose', 'Umberto Eco', '03/29/2023', '03/30/2023', '03/31/2023');
+
+
+
 
