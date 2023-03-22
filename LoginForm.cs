@@ -26,7 +26,7 @@ namespace UserRegistration19
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read())
             {
-                Password = sdr.GetString(2);  //get the user password from db if the user name is exist in that.  
+                Password = sdr.GetString(6);  //get the user password from db if the user name is exist in that.  
                 IsExist = true;
             }
             con.Close();
