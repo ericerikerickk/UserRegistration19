@@ -23,7 +23,7 @@ namespace UserRegistration19
         {
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select Idnum AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number], UserName AS [Username] from users order by Id asc", con);
+            SqlCommand cmd = new SqlCommand("Select Idnum AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number], UserName AS [Username] from users where UserName != 'admin' order by Id asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -56,6 +56,11 @@ namespace UserRegistration19
             SqlDataAdapter sdContact = new SqlDataAdapter(checkContact);
             DataTable dtContact = new DataTable();
             sdContact.Fill(dtContact);
+            // Checking Username
+            SqlCommand checkUser = new SqlCommand("select UserName from users where UserName='" + txtUserName.Text + "'", con);
+            SqlDataAdapter sdUser = new SqlDataAdapter(checkUser);
+            DataTable dtUser = new DataTable();
+            sdUser.Fill(dtUser);
             if (dt.Rows.Count > 0)
             {
                 MessageBox.Show("ID already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -76,11 +81,16 @@ namespace UserRegistration19
                 MessageBox.Show("Contact Number already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
             }
+            else if (dtUser.Rows.Count > 0)
+            {
+                MessageBox.Show("User Name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+            }
             else
             {
                 long contact = long.Parse(txtContact.Text);
-
-                SqlCommand cmd = new SqlCommand("Insert into users values ('" + txtID.Text + "', '" + txtFname.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "', '" + contact + "')", con);
+                string Password = Cryptography.Encrypt(txtPassword.Text.ToString());
+                SqlCommand cmd = new SqlCommand("Insert into users values ('" + txtID.Text + "', '" + txtFname.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "', '" + contact + "', '" + txtUserName.Text + "', '" + Password + "')", con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
@@ -99,21 +109,62 @@ namespace UserRegistration19
         private void btnEdit_Click(object sender, EventArgs e)
         {
             con.Open();
-            long contact = long.Parse(txtContact.Text);
-            int id = int.Parse(txtID.Text);
-            SqlCommand cmd = new SqlCommand("Update users SET Idnum= '" + id + "', fname= '" + txtFname.Text + "', lname= '" + txtLname.Text + "', address='" + txtAddress.Text + "', contact='" + contact + "' where UserName= '" + txtUserName.Text + "'", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            SqlCommand checkID = new SqlCommand("select Idnum from users where Idnum='" + int.Parse(txtID.Text) + "'", con);
+            SqlCommand checkFname = new SqlCommand("select fname from users where fname='" + txtFname.Text + "'", con);
+            SqlDataAdapter sd = new SqlDataAdapter(checkID);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            SqlDataAdapter sdFname = new SqlDataAdapter(checkFname);
+            DataTable dtFname = new DataTable();
+            sdFname.Fill(dtFname);
+            // Checking Last Name
+            SqlCommand checkLname = new SqlCommand("select lname from users where lname='" + txtLname.Text + "'", con);
+            SqlDataAdapter sdLname = new SqlDataAdapter(checkLname);
+            DataTable dtLname = new DataTable();
+            sdLname.Fill(dtLname);
+            // Checking Contact
+            SqlCommand checkContact = new SqlCommand("select contact from users where contact='" + long.Parse(txtContact.Text) + "'", con);
+            SqlDataAdapter sdContact = new SqlDataAdapter(checkContact);
+            DataTable dtContact = new DataTable();
+            sdContact.Fill(dtContact);
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("ID already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+            }
+            else if (dtFname.Rows.Count > 0)
+            {
+                MessageBox.Show("First Name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+            }
+            else if (dtLname.Rows.Count > 0)
+            {
+                MessageBox.Show("Last Name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+            }
+            else if (dtContact.Rows.Count > 0)
+            {
+                MessageBox.Show("Contact Number already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+            }
+            else
+            {
+                long contact = long.Parse(txtContact.Text);
+                int id = int.Parse(txtID.Text);
+                SqlCommand cmd = new SqlCommand("Update users SET Idnum= '" + id + "', fname= '" + txtFname.Text + "', lname= '" + txtLname.Text + "', address='" + txtAddress.Text + "', contact='" + contact + "' where UserName= '" + txtUserName.Text + "'", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
 
-            MessageBox.Show("Successfully Updated!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            con.Close();
-            txtFname.Clear();
-            txtLname.Clear();
-            txtAddress.Clear();
-            txtContact.Clear();
-            txtID.Clear();
+                MessageBox.Show("Successfully Updated!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                txtFname.Clear();
+                txtLname.Clear();
+                txtAddress.Clear();
+                txtContact.Clear();
+                txtID.Clear();
 
-            loadDataGrid();
+                loadDataGrid();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

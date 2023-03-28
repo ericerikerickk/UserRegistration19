@@ -22,7 +22,7 @@ namespace UserRegistration19
         {
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select Id AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number] from users order by Id asc", con);
+            SqlCommand cmd = new SqlCommand("Select Idnum AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number] from users where UserName!= 'admin' order by Id asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);

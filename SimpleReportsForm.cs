@@ -21,12 +21,7 @@ namespace UserRegistration19
         private void loadDataGrid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select COUNT(Id) from tblUserRegistration", con);
-            Int32 result = Convert.ToInt32(cmd.ExecuteScalar());
-            con.Close();
-            label5.Text = result.ToString();
-            con.Open();
-            SqlCommand cmd1 = new SqlCommand("Select COUNT(Id) from users", con);
+            SqlCommand cmd1 = new SqlCommand("Select COUNT(Id) from users where UserName != 'admin'", con);
             Int32 result1 = Convert.ToInt32(cmd1.ExecuteScalar());
             con.Close();
             label6.Text = result1.ToString();

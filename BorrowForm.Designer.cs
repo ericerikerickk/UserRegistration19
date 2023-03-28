@@ -72,9 +72,9 @@ namespace UserRegistration19
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 37);
+            this.label2.Size = new System.Drawing.Size(266, 37);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Borrow a Book";
+            this.label2.Text = "Decrease Inventory";
             // 
             // btnBorrow
             // 
@@ -83,7 +83,7 @@ namespace UserRegistration19
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(75, 23);
             this.btnBorrow.TabIndex = 3;
-            this.btnBorrow.Text = "Borrow";
+            this.btnBorrow.Text = "Decrease";
             this.btnBorrow.UseVisualStyleBackColor = true;
             this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
