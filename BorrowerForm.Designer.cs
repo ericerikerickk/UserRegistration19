@@ -47,6 +47,8 @@ namespace UserRegistration19
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,6 +67,8 @@ namespace UserRegistration19
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUserName);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtContact);
@@ -79,7 +83,7 @@ namespace UserRegistration19
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(85, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 139);
+            this.groupBox1.Size = new System.Drawing.Size(298, 163);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fill Up Here";
@@ -94,7 +98,7 @@ namespace UserRegistration19
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 22);
+            this.label6.Location = new System.Drawing.Point(64, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 10;
@@ -131,7 +135,7 @@ namespace UserRegistration19
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 116);
+            this.label5.Location = new System.Drawing.Point(14, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 5;
@@ -205,7 +209,7 @@ namespace UserRegistration19
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(85, 231);
+            this.groupBox2.Location = new System.Drawing.Point(85, 255);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(350, 165);
             this.groupBox2.TabIndex = 5;
@@ -230,6 +234,22 @@ namespace UserRegistration19
             this.txtSearch.Size = new System.Drawing.Size(102, 22);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(40, 141);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Username:";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(114, 138);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(158, 22);
+            this.txtUserName.TabIndex = 13;
             // 
             // BorrowerForm
             // 
@@ -277,5 +297,7 @@ namespace UserRegistration19
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label label7;
     }
 }

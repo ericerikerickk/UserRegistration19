@@ -23,7 +23,7 @@ namespace UserRegistration19
         {
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select Id AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number] from users order by Id asc", con);
+            SqlCommand cmd = new SqlCommand("Select Idnum AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number], UserName AS [Username] from users order by Id asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -38,7 +38,7 @@ namespace UserRegistration19
         private void btnAdd_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand checkID = new SqlCommand("select ID from users where ID='" + int.Parse(txtID.Text) + "'", con);
+            SqlCommand checkID = new SqlCommand("select Idnum from users where Idnum='" + int.Parse(txtID.Text) + "'", con);
             SqlCommand checkFname = new SqlCommand("select fname from users where fname='" + txtFname.Text + "'", con);
             SqlDataAdapter sd = new SqlDataAdapter(checkID);
             DataTable dt = new DataTable();
@@ -84,7 +84,15 @@ namespace UserRegistration19
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully Saved!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
+                con.Close();
+                txtFname.Clear();
+                txtLname.Clear();
+                txtAddress.Clear();
+                txtContact.Clear();
+                txtID.Clear();
+
                 loadDataGrid();
+
             }         
         }
 
@@ -93,12 +101,18 @@ namespace UserRegistration19
             con.Open();
             long contact = long.Parse(txtContact.Text);
             int id = int.Parse(txtID.Text);
-            SqlCommand cmd = new SqlCommand("Update users SET fname= '" + txtFname.Text + "', lname= '" + txtLname.Text + "', address='" + txtAddress.Text + "', contact='" + contact + "' where Id= '" + id + "'", con);
+            SqlCommand cmd = new SqlCommand("Update users SET Idnum= '" + id + "', fname= '" + txtFname.Text + "', lname= '" + txtLname.Text + "', address='" + txtAddress.Text + "', contact='" + contact + "' where UserName= '" + txtUserName.Text + "'", con);
             cmd.ExecuteNonQuery();
+            con.Close();
 
             MessageBox.Show("Successfully Updated!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             con.Close();
+            txtFname.Clear();
+            txtLname.Clear();
+            txtAddress.Clear();
+            txtContact.Clear();
+            txtID.Clear();
+
             loadDataGrid();
         }
 
@@ -120,6 +134,13 @@ namespace UserRegistration19
                 MessageBox.Show("Cancelled!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             con.Close();
+            txtFname.Clear();
+            txtLname.Clear();
+            txtAddress.Clear();
+            txtContact.Clear();
+            txtID.Clear();
+   
+       
             loadDataGrid();
         }
 
@@ -130,6 +151,7 @@ namespace UserRegistration19
             txtLname.Text = dataGridView1.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
             txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells["Address"].Value.ToString();
             txtContact.Text = dataGridView1.Rows[e.RowIndex].Cells["Contact Number"].Value.ToString();
+            txtUserName.Text = dataGridView1.Rows[e.RowIndex].Cells["Username"].Value.ToString();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

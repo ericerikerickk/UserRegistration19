@@ -40,11 +40,15 @@ namespace UserRegistration19
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtID);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtContact);
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.txtLname);
@@ -64,28 +68,28 @@ namespace UserRegistration19
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(116, 96);
+            this.txtContact.Location = new System.Drawing.Point(116, 112);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(158, 22);
             this.txtContact.TabIndex = 9;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(116, 73);
+            this.txtAddress.Location = new System.Drawing.Point(116, 89);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(158, 22);
             this.txtAddress.TabIndex = 8;
             // 
             // txtLname
             // 
-            this.txtLname.Location = new System.Drawing.Point(116, 49);
+            this.txtLname.Location = new System.Drawing.Point(116, 65);
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(158, 22);
             this.txtLname.TabIndex = 7;
             // 
             // txtFname
             // 
-            this.txtFname.Location = new System.Drawing.Point(116, 26);
+            this.txtFname.Location = new System.Drawing.Point(116, 42);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(158, 22);
             this.txtFname.TabIndex = 6;
@@ -93,7 +97,7 @@ namespace UserRegistration19
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 99);
+            this.label5.Location = new System.Drawing.Point(20, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 5;
@@ -102,7 +106,7 @@ namespace UserRegistration19
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 76);
+            this.label4.Location = new System.Drawing.Point(59, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 4;
@@ -111,7 +115,7 @@ namespace UserRegistration19
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 52);
+            this.label3.Location = new System.Drawing.Point(49, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 3;
@@ -120,7 +124,7 @@ namespace UserRegistration19
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 29);
+            this.label2.Location = new System.Drawing.Point(47, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 2;
@@ -148,6 +152,22 @@ namespace UserRegistration19
             this.btnAdd.Text = "Update";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(67, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Id no. :";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(116, 15);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(158, 22);
+            this.txtID.TabIndex = 11;
             // 
             // UserInfoForm
             // 
@@ -181,5 +201,7 @@ namespace UserRegistration19
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label6;
     }
 }
