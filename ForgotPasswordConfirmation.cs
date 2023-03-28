@@ -10,14 +10,15 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace UserRegistration19
 {
-    public partial class LoginForm : Form
+    public partial class ForgotPasswordConfirmation : Form
     {
-        public LoginForm()
+        public ForgotPasswordConfirmation()
         {
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=LibSysDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        private void btnLogin_Click(object sender, EventArgs e)
+
+        private void btnProceed_Click(object sender, EventArgs e)
         {
             string Password = "";
             bool IsExist = false;
@@ -34,7 +35,7 @@ namespace UserRegistration19
             {
                 if (Cryptography.Decrypt(Password).Equals(txtPassword.Text))
                 {
-                    if(txtUserName.Text == "admin")
+                    if (txtUserName.Text == "admin")
                     {
                         DashboardForm frm4 = new DashboardForm(txtUserName.Text);
                         this.Hide();
@@ -42,9 +43,9 @@ namespace UserRegistration19
                     }
                     else
                     {
-                        Form1 form1 = new Form1(txtUserName.Text);
+                        ChangePassword changePass = new ChangePassword(txtUserName.Text);
                         this.Hide();
-                        form1.ShowDialog();
+                        changePass.ShowDialog();
                     }
                 }
                 else
@@ -57,34 +58,6 @@ namespace UserRegistration19
             {
                 MessageBox.Show("Please enter the valid credentials", "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            RegistrationForm register = new RegistrationForm();
-            this.Hide();
-            register.ShowDialog();
-        }
-
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Do you want to close this window?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr != DialogResult.Yes)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            ForgotPasswordConfirmation forgotCon = new ForgotPasswordConfirmation();
-            forgotCon.ShowDialog();
         }
     }
 }
