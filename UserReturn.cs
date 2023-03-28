@@ -24,7 +24,7 @@ namespace UserRegistration19
         private void loadDataGrid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select DISTINCT book.accession_number AS [Accession Number], book.title AS [Title], book.author AS [Author] from book INNER JOIN borrowTable ON book.accession_number = borrowTable.bookID where borrowTable.username = '" + username + "' AND book.available = 0", con);
+            SqlCommand cmd = new SqlCommand("Select DISTINCT book.accession_number AS [Accession Number], book.title AS [Title], book.author AS [Author], borrowTable.username AS [Username] from book INNER JOIN borrowTable ON book.accession_number = borrowTable.bookID where borrowTable.username = '" + username + "' AND book.available = 0", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);

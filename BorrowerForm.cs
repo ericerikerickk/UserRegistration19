@@ -23,7 +23,7 @@ namespace UserRegistration19
         {
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select Idnum AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number], UserName AS [Username] from users where UserName != 'admin' order by Id asc", con);
+            SqlCommand cmd = new SqlCommand("Select Idnum AS [ID],  fname AS [First Name], lname AS [Last Name], address AS [Address], contact AS [Contact Number], UserName AS [Username], password AS [Password] from users where UserName != 'admin' order by Id asc", con);
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
@@ -106,67 +106,6 @@ namespace UserRegistration19
             }         
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            con.Open();
-            SqlCommand checkID = new SqlCommand("select Idnum from users where Idnum='" + int.Parse(txtID.Text) + "'", con);
-            SqlCommand checkFname = new SqlCommand("select fname from users where fname='" + txtFname.Text + "'", con);
-            SqlDataAdapter sd = new SqlDataAdapter(checkID);
-            DataTable dt = new DataTable();
-            sd.Fill(dt);
-            SqlDataAdapter sdFname = new SqlDataAdapter(checkFname);
-            DataTable dtFname = new DataTable();
-            sdFname.Fill(dtFname);
-            // Checking Last Name
-            SqlCommand checkLname = new SqlCommand("select lname from users where lname='" + txtLname.Text + "'", con);
-            SqlDataAdapter sdLname = new SqlDataAdapter(checkLname);
-            DataTable dtLname = new DataTable();
-            sdLname.Fill(dtLname);
-            // Checking Contact
-            SqlCommand checkContact = new SqlCommand("select contact from users where contact='" + long.Parse(txtContact.Text) + "'", con);
-            SqlDataAdapter sdContact = new SqlDataAdapter(checkContact);
-            DataTable dtContact = new DataTable();
-            sdContact.Fill(dtContact);
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("ID already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else if (dtFname.Rows.Count > 0)
-            {
-                MessageBox.Show("First Name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else if (dtLname.Rows.Count > 0)
-            {
-                MessageBox.Show("Last Name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else if (dtContact.Rows.Count > 0)
-            {
-                MessageBox.Show("Contact Number already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else
-            {
-                long contact = long.Parse(txtContact.Text);
-                int id = int.Parse(txtID.Text);
-                SqlCommand cmd = new SqlCommand("Update users SET Idnum= '" + id + "', fname= '" + txtFname.Text + "', lname= '" + txtLname.Text + "', address='" + txtAddress.Text + "', contact='" + contact + "' where UserName= '" + txtUserName.Text + "'", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-
-                MessageBox.Show("Successfully Updated!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-                txtFname.Clear();
-                txtLname.Clear();
-                txtAddress.Clear();
-                txtContact.Clear();
-                txtID.Clear();
-
-                loadDataGrid();
-            }
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -203,6 +142,7 @@ namespace UserRegistration19
             txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells["Address"].Value.ToString();
             txtContact.Text = dataGridView1.Rows[e.RowIndex].Cells["Contact Number"].Value.ToString();
             txtUserName.Text = dataGridView1.Rows[e.RowIndex].Cells["Username"].Value.ToString();
+            txtPassword.Text = dataGridView1.Rows[e.RowIndex].Cells["Password"].Value.ToString();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -226,6 +166,244 @@ namespace UserRegistration19
 
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Brown;
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void btnID_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            //Checking ID number
+            SqlCommand checkID = new SqlCommand("select * from users where Idnum='" + int.Parse(txtID.Text) + "'", con);
+            SqlDataAdapter sdID = new SqlDataAdapter(checkID);
+            DataTable dtID = new DataTable();
+            sdID.Fill(dtID);
+            con.Close();
+            // Checking same value
+            con.Open();
+            SqlCommand check1 = new SqlCommand("select Idnum from users where UserName='" + txtUserName.Text + "'", con);
+            string checkLastname = Convert.ToString(check1.ExecuteScalar());
+            con.Close();
+            if (checkLastname == txtID.Text)
+            {
+                MessageBox.Show("You update the same value!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGrid();
+
+            }
+            else if (dtID.Rows.Count > 0)
+            {
+                MessageBox.Show("ID number already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmdID = new SqlCommand("Update users SET Idnum='" + int.Parse(txtID.Text) + "' where UserName = '" + txtUserName.Text + "'", con);
+                cmdID.ExecuteNonQuery();
+                MessageBox.Show("ID number Updated Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+        }
+
+        private void btnFname_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            //Checking First Name 
+            SqlCommand checkFname = new SqlCommand("select * from users where fname='" + txtFname.Text + "'", con);
+            SqlDataAdapter sdFame = new SqlDataAdapter(checkFname);
+            DataTable dtFname = new DataTable();
+            sdFame.Fill(dtFname);
+            con.Close();
+            // Checking same value
+            con.Open();
+            SqlCommand check1 = new SqlCommand("select fname from users where UserName='" + txtUserName.Text + "'", con);
+            string checkFirstname = Convert.ToString(check1.ExecuteScalar());
+            con.Close();
+            if (checkFirstname == txtFname.Text)
+            {
+                MessageBox.Show("You update the same value!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGrid();
+
+
+            }
+            else if (dtFname.Rows.Count > 0)
+            {
+                MessageBox.Show("First name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmdID = new SqlCommand("Update users SET fname='" + txtFname.Text + "' where UserName = '" + txtUserName.Text + "'", con);
+                cmdID.ExecuteNonQuery();
+                MessageBox.Show("First Name Updated Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+        }
+
+        private void btnLname_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            //Checking Last name 
+            SqlCommand checkLname = new SqlCommand("select * from users where lname='" + txtLname.Text + "'", con);
+            SqlDataAdapter sdLame = new SqlDataAdapter(checkLname);
+            DataTable dtLname = new DataTable();
+            sdLame.Fill(dtLname);
+            con.Close();
+            // Checking same value
+            con.Open();
+            SqlCommand check1 = new SqlCommand("select lname from users where UserName='" + txtUserName.Text + "'", con);
+            string checkLastname = Convert.ToString(check1.ExecuteScalar());
+            con.Close();
+            if (checkLastname == txtLname.Text)
+            {
+                MessageBox.Show("You update the same value!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGrid();
+
+
+            }
+            else if (dtLname.Rows.Count > 0)
+            {
+                MessageBox.Show("Last name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmdID = new SqlCommand("Update users SET lname='" + txtLname.Text + "' where UserName = '" + txtUserName.Text + "'", con);
+                cmdID.ExecuteNonQuery();
+                MessageBox.Show("Last Name Updated Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+        }
+
+        private void btnAddress_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            // Checking same value
+            SqlCommand check1 = new SqlCommand("select address from users where UserName='" + txtUserName.Text + "'", con);
+            string checkAddresss = Convert.ToString(check1.ExecuteScalar());
+            con.Close();
+            if (checkAddresss == txtAddress.Text)
+            {
+                MessageBox.Show("You update the same value!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGrid();
+
+
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmdID = new SqlCommand("Update users SET address='" + txtAddress.Text + "' where UserName = '" + txtUserName.Text + "'", con);
+                cmdID.ExecuteNonQuery();
+                MessageBox.Show("Address Updated Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+        }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            // Checking same value
+            SqlCommand checkContact = new SqlCommand("select contact from users where UserName='" + txtUserName.Text + "'", con);
+            string check = Convert.ToString(checkContact.ExecuteScalar());
+            con.Close();
+            if (check == txtAddress.Text)
+            {
+                MessageBox.Show("You update the same value!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGrid();
+
+
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmdID = new SqlCommand("Update users SET contact='" + long.Parse(txtContact.Text) + "' where UserName = '" + txtUserName.Text + "'", con);
+                cmdID.ExecuteNonQuery();
+                MessageBox.Show("Contact Number Updated Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+        }
+
+        private void btnUsername_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            //Checking Username 
+            SqlCommand checkUser = new SqlCommand("select * from users where UserName='" + txtUserName.Text + "'", con);
+            SqlDataAdapter sdUser = new SqlDataAdapter(checkUser);
+            DataTable dtUser = new DataTable();
+            sdUser.Fill(dtUser);
+            con.Close();
+            // Checking same value
+            con.Open();
+            SqlCommand check1 = new SqlCommand("select lname from users where UserName='" + txtUserName.Text + "'", con);
+            string checkLastname = Convert.ToString(check1.ExecuteScalar());
+            con.Close();
+            if (checkLastname == txtLname.Text)
+            {
+                MessageBox.Show("You update the same value!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGrid();
+
+
+            }
+            else if (dtUser.Rows.Count > 0)
+            {
+                MessageBox.Show("Username already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmdID = new SqlCommand("Update users SET UserName='" + txtUserName.Text + "' where Idnum = '" + int.Parse(txtID.Text) + "'", con);
+                cmdID.ExecuteNonQuery();
+                MessageBox.Show("Username Updated Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
+        }
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            // Checking same value
+            SqlCommand checkContact = new SqlCommand("select password from users where UserName='" + txtUserName.Text + "'", con);
+            string check = Convert.ToString(checkContact.ExecuteScalar());
+            con.Close();
+            if (check == txtPassword.Text)
+            {
+                MessageBox.Show("You update the same value!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGrid();
+
+
+            }
+            else
+            {
+                con.Open();
+                string Password = Cryptography.Encrypt(txtPassword.Text.ToString());
+                SqlCommand cmdID = new SqlCommand("Update users SET password='" + Password + "' where UserName = '" + txtUserName.Text + "'", con);
+                cmdID.ExecuteNonQuery();
+                MessageBox.Show("Password Updated Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadDataGrid();
+
+            }
         }
     }
 }

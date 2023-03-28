@@ -31,6 +31,8 @@ namespace UserRegistration19
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -44,13 +46,17 @@ namespace UserRegistration19
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnID = new System.Windows.Forms.Button();
+            this.btnLname = new System.Windows.Forms.Button();
+            this.btnFname = new System.Windows.Forms.Button();
+            this.btnAddress = new System.Windows.Forms.Button();
+            this.btnContact = new System.Windows.Forms.Button();
+            this.btnUsername = new System.Windows.Forms.Button();
+            this.btnPassword = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,6 +75,13 @@ namespace UserRegistration19
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnPassword);
+            this.groupBox1.Controls.Add(this.btnUsername);
+            this.groupBox1.Controls.Add(this.btnContact);
+            this.groupBox1.Controls.Add(this.btnAddress);
+            this.groupBox1.Controls.Add(this.btnLname);
+            this.groupBox1.Controls.Add(this.btnFname);
+            this.groupBox1.Controls.Add(this.btnID);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtUserName);
@@ -87,10 +100,27 @@ namespace UserRegistration19
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(85, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(297, 188);
+            this.groupBox1.Size = new System.Drawing.Size(317, 188);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fill Up Here";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(114, 163);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(158, 22);
+            this.txtPassword.TabIndex = 15;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(49, 163);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Password:";
             // 
             // txtUserName
             // 
@@ -200,23 +230,11 @@ namespace UserRegistration19
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEdit.Location = new System.Drawing.Point(439, 132);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 35);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDelete.Location = new System.Drawing.Point(439, 175);
+            this.btnDelete.Location = new System.Drawing.Point(439, 129);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 35);
             this.btnDelete.TabIndex = 4;
@@ -255,22 +273,75 @@ namespace UserRegistration19
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // label8
+            // btnID
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(49, 163);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Password:";
+            this.btnID.Location = new System.Drawing.Point(278, 19);
+            this.btnID.Name = "btnID";
+            this.btnID.Size = new System.Drawing.Size(25, 23);
+            this.btnID.TabIndex = 16;
+            this.btnID.Text = "√";
+            this.btnID.UseVisualStyleBackColor = true;
+            this.btnID.Click += new System.EventHandler(this.btnID_Click);
             // 
-            // txtPassword
+            // btnLname
             // 
-            this.txtPassword.Location = new System.Drawing.Point(114, 163);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(158, 22);
-            this.txtPassword.TabIndex = 15;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.btnLname.Location = new System.Drawing.Point(278, 66);
+            this.btnLname.Name = "btnLname";
+            this.btnLname.Size = new System.Drawing.Size(25, 23);
+            this.btnLname.TabIndex = 13;
+            this.btnLname.Text = "√";
+            this.btnLname.UseVisualStyleBackColor = true;
+            this.btnLname.Click += new System.EventHandler(this.btnLname_Click);
+            // 
+            // btnFname
+            // 
+            this.btnFname.Location = new System.Drawing.Point(278, 42);
+            this.btnFname.Name = "btnFname";
+            this.btnFname.Size = new System.Drawing.Size(25, 23);
+            this.btnFname.TabIndex = 14;
+            this.btnFname.Text = "√";
+            this.btnFname.UseVisualStyleBackColor = true;
+            this.btnFname.Click += new System.EventHandler(this.btnFname_Click);
+            // 
+            // btnAddress
+            // 
+            this.btnAddress.Location = new System.Drawing.Point(278, 90);
+            this.btnAddress.Name = "btnAddress";
+            this.btnAddress.Size = new System.Drawing.Size(25, 23);
+            this.btnAddress.TabIndex = 13;
+            this.btnAddress.Text = "√";
+            this.btnAddress.UseVisualStyleBackColor = true;
+            this.btnAddress.Click += new System.EventHandler(this.btnAddress_Click);
+            // 
+            // btnContact
+            // 
+            this.btnContact.Location = new System.Drawing.Point(278, 113);
+            this.btnContact.Name = "btnContact";
+            this.btnContact.Size = new System.Drawing.Size(25, 23);
+            this.btnContact.TabIndex = 13;
+            this.btnContact.Text = "√";
+            this.btnContact.UseVisualStyleBackColor = true;
+            this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
+            // 
+            // btnUsername
+            // 
+            this.btnUsername.Location = new System.Drawing.Point(278, 137);
+            this.btnUsername.Name = "btnUsername";
+            this.btnUsername.Size = new System.Drawing.Size(25, 23);
+            this.btnUsername.TabIndex = 13;
+            this.btnUsername.Text = "√";
+            this.btnUsername.UseVisualStyleBackColor = true;
+            this.btnUsername.Click += new System.EventHandler(this.btnUsername_Click);
+            // 
+            // btnPassword
+            // 
+            this.btnPassword.Location = new System.Drawing.Point(278, 161);
+            this.btnPassword.Name = "btnPassword";
+            this.btnPassword.Size = new System.Drawing.Size(25, 23);
+            this.btnPassword.TabIndex = 17;
+            this.btnPassword.Text = "√";
+            this.btnPassword.UseVisualStyleBackColor = true;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
             // BorrowerForm
             // 
@@ -280,7 +351,6 @@ namespace UserRegistration19
             this.ClientSize = new System.Drawing.Size(558, 449);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -311,7 +381,6 @@ namespace UserRegistration19
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSearch;
@@ -322,5 +391,12 @@ namespace UserRegistration19
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnPassword;
+        private System.Windows.Forms.Button btnUsername;
+        private System.Windows.Forms.Button btnContact;
+        private System.Windows.Forms.Button btnAddress;
+        private System.Windows.Forms.Button btnLname;
+        private System.Windows.Forms.Button btnFname;
+        private System.Windows.Forms.Button btnID;
     }
 }
