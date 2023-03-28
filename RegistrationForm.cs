@@ -30,6 +30,7 @@ namespace UserRegistration19
                     {
                         dr.Close();
                         MessageBox.Show("Username Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        con.Close();
                     }
                     else
                     {

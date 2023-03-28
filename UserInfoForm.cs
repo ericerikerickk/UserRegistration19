@@ -65,13 +65,11 @@ namespace UserRegistration19
             }
             else
             {
-                con.Open();
                 int id = int.Parse(txtID.Text);
                 SqlCommand cmd = new SqlCommand("UPDATE users SET Idnum= '" + id + "', fname = '" + txtFname.Text + "', lname = '" + txtLname.Text + "', address= '" + txtAddress.Text + "', contact= '" + long.Parse(txtContact.Text) + "' where UserName= '" + username + "'", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Successfuly updated", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnAdd.Enabled = false;
             }
             
         }
