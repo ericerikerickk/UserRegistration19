@@ -30,6 +30,8 @@ namespace UserRegistration19
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
@@ -40,13 +42,21 @@ namespace UserRegistration19
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.btnID = new System.Windows.Forms.Button();
+            this.btnFname = new System.Windows.Forms.Button();
+            this.btnLname = new System.Windows.Forms.Button();
+            this.btnAddress = new System.Windows.Forms.Button();
+            this.btnContact = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnContact);
+            this.groupBox1.Controls.Add(this.btnAddress);
+            this.groupBox1.Controls.Add(this.btnLname);
+            this.groupBox1.Controls.Add(this.btnFname);
+            this.groupBox1.Controls.Add(this.btnID);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtContact);
@@ -61,10 +71,26 @@ namespace UserRegistration19
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(69, 97);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 139);
+            this.groupBox1.Size = new System.Drawing.Size(319, 139);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fill Up Here";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(116, 15);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(158, 22);
+            this.txtID.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(67, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Id no. :";
             // 
             // txtContact
             // 
@@ -153,21 +179,55 @@ namespace UserRegistration19
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // label6
+            // btnID
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Id no. :";
+            this.btnID.Location = new System.Drawing.Point(280, 15);
+            this.btnID.Name = "btnID";
+            this.btnID.Size = new System.Drawing.Size(25, 23);
+            this.btnID.TabIndex = 12;
+            this.btnID.Text = "√";
+            this.btnID.UseVisualStyleBackColor = true;
+            this.btnID.Click += new System.EventHandler(this.btnID_Click);
             // 
-            // txtID
+            // btnFname
             // 
-            this.txtID.Location = new System.Drawing.Point(116, 15);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(158, 22);
-            this.txtID.TabIndex = 11;
+            this.btnFname.Location = new System.Drawing.Point(280, 42);
+            this.btnFname.Name = "btnFname";
+            this.btnFname.Size = new System.Drawing.Size(25, 23);
+            this.btnFname.TabIndex = 13;
+            this.btnFname.Text = "√";
+            this.btnFname.UseVisualStyleBackColor = true;
+            this.btnFname.Click += new System.EventHandler(this.btnFname_Click);
+            // 
+            // btnLname
+            // 
+            this.btnLname.Location = new System.Drawing.Point(280, 65);
+            this.btnLname.Name = "btnLname";
+            this.btnLname.Size = new System.Drawing.Size(25, 23);
+            this.btnLname.TabIndex = 13;
+            this.btnLname.Text = "√";
+            this.btnLname.UseVisualStyleBackColor = true;
+            this.btnLname.Click += new System.EventHandler(this.btnLname_Click);
+            // 
+            // btnAddress
+            // 
+            this.btnAddress.Location = new System.Drawing.Point(280, 88);
+            this.btnAddress.Name = "btnAddress";
+            this.btnAddress.Size = new System.Drawing.Size(25, 23);
+            this.btnAddress.TabIndex = 13;
+            this.btnAddress.Text = "√";
+            this.btnAddress.UseVisualStyleBackColor = true;
+            this.btnAddress.Click += new System.EventHandler(this.btnAddress_Click);
+            // 
+            // btnContact
+            // 
+            this.btnContact.Location = new System.Drawing.Point(280, 111);
+            this.btnContact.Name = "btnContact";
+            this.btnContact.Size = new System.Drawing.Size(25, 23);
+            this.btnContact.TabIndex = 13;
+            this.btnContact.Text = "√";
+            this.btnContact.UseVisualStyleBackColor = true;
+            this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
             // 
             // UserInfoForm
             // 
@@ -203,5 +263,10 @@ namespace UserRegistration19
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnContact;
+        private System.Windows.Forms.Button btnAddress;
+        private System.Windows.Forms.Button btnLname;
+        private System.Windows.Forms.Button btnFname;
+        private System.Windows.Forms.Button btnID;
     }
 }
