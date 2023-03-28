@@ -25,53 +25,12 @@ namespace UserRegistration19
         private void btnAdd_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand checkID = new SqlCommand("select Idnum from users where Idnum='" + int.Parse(txtID.Text) + "'", con);
-            SqlCommand checkFname = new SqlCommand("select fname from users where fname='" + txtFname.Text + "'", con);
-            SqlDataAdapter sd = new SqlDataAdapter(checkID);
-            DataTable dt = new DataTable();
-            sd.Fill(dt);
-            SqlDataAdapter sdFname = new SqlDataAdapter(checkFname);
-            DataTable dtFname = new DataTable();
-            sdFname.Fill(dtFname);
-            // Checking Last Name
-            SqlCommand checkLname = new SqlCommand("select lname from users where lname='" + txtLname.Text + "'", con);
-            SqlDataAdapter sdLname = new SqlDataAdapter(checkLname);
-            DataTable dtLname = new DataTable();
-            sdLname.Fill(dtLname);
-            // Checking Contact
-            SqlCommand checkContact = new SqlCommand("select contact from users where contact='" + long.Parse(txtContact.Text) + "'", con);
-            SqlDataAdapter sdContact = new SqlDataAdapter(checkContact);
-            DataTable dtContact = new DataTable();
-            sdContact.Fill(dtContact);
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("ID already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else if (dtFname.Rows.Count > 0)
-            {
-                MessageBox.Show("First Name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else if (dtLname.Rows.Count > 0)
-            {
-                MessageBox.Show("Last Name already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else if (dtContact.Rows.Count > 0)
-            {
-                MessageBox.Show("Contact Number already Exist!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.Close();
-            }
-            else
-            {
-                int id = int.Parse(txtID.Text);
-                SqlCommand cmd = new SqlCommand("UPDATE users SET Idnum= '" + id + "', fname = '" + txtFname.Text + "', lname = '" + txtLname.Text + "', address= '" + txtAddress.Text + "', contact= '" + long.Parse(txtContact.Text) + "' where UserName= '" + username + "'", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Successfuly updated", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
+            int id = int.Parse(txtID.Text);
+            SqlCommand cmd = new SqlCommand("UPDATE users SET Idnum= '" + id + "', fname = '" + txtFname.Text + "', lname = '" + txtLname.Text + "', address= '" + txtAddress.Text + "', contact= '" + long.Parse(txtContact.Text) + "' where UserName= '" + username + "'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Successfuly updated", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void displayData()
         {
